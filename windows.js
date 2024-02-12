@@ -16,8 +16,8 @@ document.getElementById("password_input").onclick = function()
 function login(callback){
 
 //hardcoded the password and username as they wont change
-const username = "1";
-const password = "1";
+const username = "josephkim0703";
+const password = "helloworld";
 
 let user_input = document.getElementById("user_input").value;
 let pass_input = document.getElementById("password_input").value;
@@ -85,6 +85,7 @@ let pass_input = document.getElementById("password_input").value;
     }
 }
 
+//once logged in you get to the pin page
 function pin() {
     const pin = "2004";
     let pin_input = document.getElementById("password_input").value;
@@ -111,7 +112,7 @@ function pin() {
         document.getElementById("welcome").style.display = "block";
         document.getElementById("loader").style.display = "block";
         setTimeout(() => {
-            window.location.href = "./index.html";
+            window.location.href = "./windows.html";
         },3000);
     }
 }
@@ -198,7 +199,7 @@ function loginBottons(){
     }
     
   }
-
+//ease of access only the high contrast works
   document.getElementById("button_2").onclick = function(){
 
     document.getElementById("internet_popup").style.visibility = "hidden";
@@ -212,15 +213,9 @@ function loginBottons(){
 
     input1.addEventListener("change", function() {
         if (!input1.checked) {
-            document.getElementById("box_0").style.transform = "translateX(" + 0 + "%)";
-
-         //   document.getElementById("box_0").style.backgroundColor = "grey"; 
-         //   document.getElementById("n_label").style.background = "var(--primary-color)";
+            document.getElementById("box_0").style.transform = "translateX(" + 0 + "%)";  
         } else {
             document.getElementById("box_0").style.transform = "translateX(" + 255 + "%)";
-            
-         //   document.getElementById("box_0").style.backgroundColor = "aqua"; 
-          //  document.getElementById("n_label").style.background = "aqua"; 
             console.log("success");
         }
     });
@@ -229,45 +224,28 @@ function loginBottons(){
                  
         if (!input2.checked) {
             document.getElementById("box_1").style.transform = "translateX(" + 0 + "%)";
-            document.body.classList.remove("darktheme");
-       
+            document.body.classList.remove("darktheme");    
         } else {
             document.getElementById("box_1").style.transform = "translateX(" + 255 + "%)";
-            document.body.classList.add("darktheme");
-            
+            document.body.classList.add("darktheme");     
         }
     
     });
 
-    
-
-
     input3.addEventListener("change", function() {
         if (!input3.checked) {
             document.getElementById("box_2").style.transform = "translateX(" + 0 + "%)";
-
-          //  document.getElementById("box_2").style.backgroundColor = "grey"; 
-        //    document.getElementById("s_label").style.background = "var(--primary-color)";
         } else {
-            document.getElementById("box_2").style.transform = "translateX(" + 255 + "%)";
-            
-          //  document.getElementById("box_2").style.backgroundColor = "aqua"; 
-         //   document.getElementById("s_label").style.background = "aqua"; 
+            document.getElementById("box_2").style.transform = "translateX(" + 255 + "%)"; 
             console.log("success");
         }
     });
 
     input4.addEventListener("change", function() {
         if (!input4.checked) {
-            document.getElementById("box_3").style.transform = "translateX(" + 0 + "%)";
-
-           // document.getElementById("box_3").style.backgroundColor = "grey"; 
-           // document.getElementById("f_label").style.background = "var(--primary-color)";
+            document.getElementById("box_3").style.transform = "translateX(" + 0 + "%)"; 
         } else {
-            document.getElementById("box_3").style.transform = "translateX(" + 255 + "%)";
-            
-            //document.getElementById("box_3").style.backgroundColor = "aqua"; 
-            //document.getElementById("f_label").style.background = "aqua"; 
+            document.getElementById("box_3").style.transform = "translateX(" + 255 + "%)";   
             console.log("success");
         }
     });
@@ -313,5 +291,40 @@ function loginBottons(){
   }
 }
 
+function drag(){
+    //no idea how this works honestly got it off chatgpt
+    document.addEventListener('DOMContentLoaded', function () {
+        const sticky = document.getElementById('sticky');
+    
+        let X, Y, drag = false;
+    
+        sticky.addEventListener('dragstart', function (e) {
+            //for firefox
+            e.dataTransfer.setData('text/plain', '');
+
+            //get clients browers width and height
+            X = e.clientX - sticky.getBoundingClientRect().left;
+            Y = e.clientY - sticky.getBoundingClientRect().top;
+            drag = true;
+        });
+    
+        //calculates the new position
+        document.addEventListener('mousemove', function (e) {
+            if (!drag) return;
+    
+            const x = e.clientX - X;
+            const y = e.clientY - Y;
+    
+            sticky.style.left = x + 'px';
+            sticky.style.top = y + 'px';
+        });
+    
+        //event listener is added to stop the dragging when the mouse button is released
+        document.addEventListener('mousedown', function () {
+            drag = false;
+        });
+    });
+}
+drag();
 loginBottons();
 

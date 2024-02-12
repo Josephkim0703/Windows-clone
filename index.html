@@ -4,13 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="window.css">
     <title>Document</title>
 </head>
 <body>
+
     <div id="windows_login">
+
+        <div id="sticky" draggable="true">
+            <img src="./assets/sticky.png" alt="">
+            <div id="sticky_text">
+                <h1>User: josephkim0703</h1>
+                <h1 style="margin-bottom: 10px; transform: skew(10deg, 0deg) translateX(-4px);" >Password: helloworld</h1>
+                <h1 style="margin-left: 5px;  transform: skew(0deg, 1deg);">Pin: 2004</h1>
+            </div>
+        </div>
+
     <form>  
         <img id="windows_back" src="./assets/windows.jpg" alt="">
         <div id="windows_page">
@@ -70,7 +82,7 @@
                     <h1>Narrator<br><b>Off</b></h1><input type="checkbox" id="narrator">
                     <label for="narrator" id="n_label"><div id="box_0"></div></label>
             
-                    <button type="button">Magnifier</button>
+                    <button type="button" id="zoom">Magnifier</button>
                     
                     <button type="button">On-Screen Keyboard</button>         
                
