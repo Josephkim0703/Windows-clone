@@ -40,10 +40,10 @@ transition: 0.8s;
 }
 
 #windows_page{
-  top: 50%;
+  top: 32rem;
   left: 50%;
   position: absolute;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -10rem);
 }
 
 #user_profile{
@@ -175,10 +175,26 @@ i{
     margin-right: 1px;
 }
 
-#bottom_button{
+#footer{
+  position: relative;
   display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  transform: translateY(77vh);
+  margin-right: 5px;
+}
+
+#popups{
   justify-content: flex-end;
-  transform: translateY(93vh);
+  align-items: flex-end;
+  display: flex;
+  margin-bottom: 15px;
+  margin-right: 15px;
+}
+
+#bottom_button{
+
+
 }
 
 #bottom_button button{
@@ -201,7 +217,7 @@ i{
   position: relative;
   display: flex;
   flex-direction: row;
-  transform: translate(46.5%,-260%);
+  transform: translate(22%,-260%);
 }
 
 #messages h1{
@@ -292,16 +308,9 @@ i{
     }
   }
 
-  #popups{
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    margin-bottom: 15px;
-    margin-right: 15px;
-  }
 
   #shutdown_popup{
-    position: absolute;
+   
     border: 2px solid rgb(85, 85, 85);
     width: 6rem;
     height:9.5rem;
@@ -569,3 +578,5 @@ display: none;
  height: 0px;
 visibility: hidden;
 }
+
+

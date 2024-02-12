@@ -1,3 +1,5 @@
+
+
 //sets password ui design once clicked on
 document.getElementById("password_input").onclick = function()
 {
@@ -11,7 +13,6 @@ document.getElementById("password_input").onclick = function()
     document.getElementById("show_password").style.visibility = "hidden";
     }
 }
-
 //sets login function
 function login(callback){
 
@@ -192,6 +193,9 @@ function loginBottons(){
        document.getElementById("windows_page").onclick = function(){
             document.getElementById("shutdown_popup").style.visibility = "hidden";
        }
+       document.getElementById("windows_back").onclick = function() {
+        document.getElementById("shutdown_popup").style.visibility = "hidden";
+    }
     
   }
 
@@ -242,11 +246,11 @@ function loginBottons(){
         }
     });
 
-
-    
-
-
     document.getElementById("windows_page").onclick = function() {
+        document.getElementById("ease_popup").style.visibility = "hidden";
+    }
+    
+    document.getElementById("windows_back").onclick = function() {
         document.getElementById("ease_popup").style.visibility = "hidden";
     }
 }
@@ -277,7 +281,11 @@ function loginBottons(){
     document.getElementById("windows_page").onclick = function(){
         document.getElementById("internet_popup").style.visibility = "hidden";
    }
+   document.getElementById("windows_back").onclick = function() {
+    document.getElementById("internet_popup").style.visibility = "hidden";
+}
   }
 }
 
 loginBottons();
+
