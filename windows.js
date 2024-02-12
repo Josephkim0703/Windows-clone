@@ -217,7 +217,7 @@ function loginBottons(){
          //   document.getElementById("box_0").style.backgroundColor = "grey"; 
          //   document.getElementById("n_label").style.background = "var(--primary-color)";
         } else {
-            document.getElementById("box_0").style.transform = "translateX(" + 260 + "%)";
+            document.getElementById("box_0").style.transform = "translateX(" + 255 + "%)";
             
          //   document.getElementById("box_0").style.backgroundColor = "aqua"; 
           //  document.getElementById("n_label").style.background = "aqua"; 
@@ -226,27 +226,21 @@ function loginBottons(){
     });
 
     input2.addEventListener("change", function() {
+                 
         if (!input2.checked) {
             document.getElementById("box_1").style.transform = "translateX(" + 0 + "%)";
-            document.body.classList.toggle("darktheme");
-
-            document.getElementById("windows_back").style.opacity = 1;
-          //  document.getElementById("windows_back").style.transition = 0.8 + "s";
-            
-            document.getElementById("box_1").style.backgroundColor = "grey"; 
-            document.getElementById("d_label").style.background = "var(--primary-color)";
+            document.body.classList.remove("darktheme");
+       
         } else {
-            document.getElementById("box_1").style.transform = "translateX(" + 260 + "%)"; 
-            document.body.classList.toggle("darktheme");
-
-            document.getElementById("box_1").style.backgroundColor = "aqua"; 
-            document.getElementById("d_label").style.background = "aqua"; 
-
-            document.getElementById("windows_back").style.opacity = 0;
-           // document.getElementById("windows_back").style.transition = 0+ "s";
-            console.log("success");
+            document.getElementById("box_1").style.transform = "translateX(" + 255 + "%)";
+            document.body.classList.add("darktheme");
+            
         }
+    
     });
+
+    
+
 
     input3.addEventListener("change", function() {
         if (!input3.checked) {
@@ -255,7 +249,7 @@ function loginBottons(){
           //  document.getElementById("box_2").style.backgroundColor = "grey"; 
         //    document.getElementById("s_label").style.background = "var(--primary-color)";
         } else {
-            document.getElementById("box_2").style.transform = "translateX(" + 260 + "%)";
+            document.getElementById("box_2").style.transform = "translateX(" + 255 + "%)";
             
           //  document.getElementById("box_2").style.backgroundColor = "aqua"; 
          //   document.getElementById("s_label").style.background = "aqua"; 
@@ -270,7 +264,7 @@ function loginBottons(){
            // document.getElementById("box_3").style.backgroundColor = "grey"; 
            // document.getElementById("f_label").style.background = "var(--primary-color)";
         } else {
-            document.getElementById("box_3").style.transform = "translateX(" + 260 + "%)";
+            document.getElementById("box_3").style.transform = "translateX(" + 255 + "%)";
             
             //document.getElementById("box_3").style.backgroundColor = "aqua"; 
             //document.getElementById("f_label").style.background = "aqua"; 

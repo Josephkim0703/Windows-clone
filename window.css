@@ -13,12 +13,17 @@ body{
 :root{
   --secondary-color: black;
   --primary-color: white;
- 
+  --main-bg: 1 ;
 }
 
 .darktheme{
    --secondary-color: white;
    --primary-color: black;
+   --main-bg: 0 ;
+}
+
+.filler{
+  
 }
 
 html{
@@ -37,7 +42,7 @@ min-width: 1920px;
 min-height: 1080px;
 filter: blur(5px) brightness(0.9);
 z-index: 0;
-
+opacity: var(--main-bg);
 }
 
 #windows_page{
