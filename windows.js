@@ -241,6 +241,11 @@ function loginBottons(){
             console.log("success");
         }
     });
+
+
+    
+
+
     document.getElementById("windows_page").onclick = function() {
         document.getElementById("ease_popup").style.visibility = "hidden";
     }

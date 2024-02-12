@@ -7,6 +7,17 @@ body{
     overflow: hidden;
     margin: 0%;
   background-color: #000000;
+
+}
+
+:root{
+  --secondary-color: white;
+  --primary-color: black;
+}
+
+.darktheme{
+   --secondary-color: black;
+   --primary-color: white;
 }
 
 html{
@@ -14,9 +25,6 @@ html{
 
 }
 
-#windows_login{
-
-}
 
 #windows_back{
 position: absolute;
@@ -24,13 +32,18 @@ left: -10px;
 top: -10px;
 width: 105%;
 height: auto;
+min-width: 1920px;
+min-height: 1080px;
 filter: blur(5px) brightness(0.9);
 z-index: 0;
 transition: 0.8s;
 }
 
 #windows_page{
-  margin-top: 20rem;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%,-50%);
 }
 
 #user_profile{
@@ -163,14 +176,15 @@ i{
 }
 
 #bottom_button{
-    display: flex;
-    flex-direction: row-reverse;
-    transform: translate(-1rem,13rem);
+  display: flex;
+  justify-content: flex-end;
+  transform: translateY(93vh);
 }
 
 #bottom_button button{
     border: none;
     background-color: transparent;
+
 }
 
 #bottom_button img{
@@ -278,11 +292,16 @@ i{
     }
   }
 
+  #popups{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-bottom: 15px;
+    margin-right: 15px;
+  }
+
   #shutdown_popup{
-    position: relative;
-    top: 50%;
-    left: 95.5%;
-    transform: translate(-50%, 5%); 
+    position: absolute;
     border: 2px solid rgb(85, 85, 85);
     width: 6rem;
     height:9.5rem;
@@ -307,12 +326,12 @@ i{
     font-weight: 400;
     font-size: 11px;
     margin-left:5px;
-    margin-top:19px;
+    margin-top:17px;
   }
 
   #shutdown_popup img{
     margin-left: 1px;
-    margin-top: 17px;
+    margin-top: 15px;
     width: 1.2rem;
     filter: brightness(0) invert();
   }
@@ -359,7 +378,7 @@ display: none;
         font-weight: 350;
         display: none;
         transition: 0.5s;
-    }
+}
 
 #blue_screens h1{
     position: absolute;
@@ -373,10 +392,7 @@ display: none;
 }
 
 #internet_popup{
-  position: relative;
-  top: 50%;
-  left: 94%;
-  transform: translate(-50%,-95%);
+  position: absolute;
   border: none;
   border: 2px solid rgb(85, 85, 85);
   width: 11rem;
@@ -491,10 +507,7 @@ display: none;
 }
 
 #ease_popup{
-  position: relative;
-  top: 50%;
-  left: 94.7%;
-  transform: translate(-50%,-135%);
+  position: absolute;
   border: 1px solid white;
   background-color: white;
   display: flex;
@@ -551,8 +564,6 @@ display: none;
     height: 10px;
     transform: translatex(0%);
 }
-
-
 
 #ease_popup input{
  height: 0px;

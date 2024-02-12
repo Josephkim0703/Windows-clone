@@ -10,13 +10,12 @@
     <title>Document</title>
 </head>
 <body>
-    
-    <form>
-       <div id="windows_login">
-
+    <div id="windows_login">
+    <form>  
+        <img id="windows_back" src="./assets/windows.jpg" alt="">
         <div id="windows_page">
             <div id="windows_form">
-                <img id="windows_back" src="./assets/windows.jpg" alt="">
+            
             <div id="user_profile"><img src="./assets/windows_user.png" alt="" id="user_image"></div>
                 <h1 id="user_name">Other user</h1>
             <input type="text" id="user_input" placeholder="User name">
@@ -37,41 +36,7 @@
             </div>
         </div>    
 
-            <div id="bottom_button">
-                <button type="button" id="button_1"><img src="./assets/shutdown.png" alt=""></button>
-                <button type="button" id="button_2"><img src="./assets/ease.png" alt="" style="margin-right: 5px;"></button>
-                <button type="button" id="button_3"><img src="./assets/network.png" alt="" id="network_icon"></button>
-            </div>
-
-            <div id="shutdown_popup">
-                <button type="button" id="sleep_button"><img src="./assets/sleep.png" alt=""><h1>Sleep</h1></button>
-                <button type="button" id="shutdown_button"><img src="./assets/shutdown.png" alt=""><h1>Shut Down</h1></button>
-                <button type="button" id="restart_button"><img src="./assets/restart.png" alt=""><h1>Restart</h1></button>
-            </div>
-
-            <div id="internet_popup">
-                <button type="button" id="internet"><img src="./assets/network.png" alt=""><p><b> Network 2</b><br><span style="color: rgba(221, 221, 221, 0.808);">Connected</span></p></button>
-                <button type="button" id="airplane_mode"><img src="./assets/airplane.png" alt="" id="airplane_icon"><p id="airplane_text">Airplane mode</p></button>
-            </div>
-
-            <div id="ease_popup">
-                <h1>Narrator<br><b>Off</b></h1><input type="checkbox" id="narrator">
-                <label for="narrator" id="n_label"><div id="box_0"></div></label>
-
-                <button type="button">Magnifier</button>
-                
-                <button type="button">On-Screen Keyboard</button>         
-           
-                <h1>High Contrast<br><b>Off</b></h1><input type="checkbox" id="dark">
-                <label for="dark" id="d_label"><div id="box_1"></div></label>
-               
-                <h1>Sticky Keys<br><b>Off</b></h1><input type="checkbox" id="sticky">
-                <label for="sticky" id="s_label"><div id="box_2"> </div></label>
-     
-                <h1>Filter Keys<br><b>Off</b></h1><input type="checkbox" id="filter">
-                <label for="filter" id="f_label"><div id="box_3"></div></label>
-            </div>
-
+              
             <div id="blue_screens">
                 <span id="loader_1"></span>
                 <div id="restart_screen"><h1>Restarting</h1></div>
@@ -86,12 +51,49 @@
                 <button type="button" id="ok">OK</button>
             </div>
 
-
-
-
-        </div>
+           
+                <div id="popups">
+                    <div id="shutdown_popup">
+                    <button type="button" id="sleep_button"><img src="./assets/sleep.png" alt=""><h1>Sleep</h1></button>
+                    <button type="button" id="shutdown_button"><img src="./assets/shutdown.png" alt=""><h1>Shut Down</h1></button>
+                    <button type="button" id="restart_button"><img src="./assets/restart.png" alt=""><h1>Restart</h1></button>
+                    </div>
+            
+                    <div id="internet_popup">
+                    <button type="button" id="internet"><img src="./assets/network.png" alt=""><p><b> Network 2</b><br><span style="color: rgba(221, 221, 221, 0.808);">Connected</span></p></button>
+                    <button type="button" id="airplane_mode"><img src="./assets/airplane.png" alt="" id="airplane_icon"><p id="airplane_text">Airplane mode</p></button>
+                    </div>
+            
+                    <div id="ease_popup">
+                    <h1>Narrator<br><b>Off</b></h1><input type="checkbox" id="narrator">
+                    <label for="narrator" id="n_label"><div id="box_0"></div></label>
+            
+                    <button type="button">Magnifier</button>
+                    
+                    <button type="button">On-Screen Keyboard</button>         
+               
+                    <h1>High Contrast<br><b>Off</b></h1><input type="checkbox" id="dark">
+                    <label for="dark" id="d_label"><div id="box_1"></div></label>
+                   
+                    <h1>Sticky Keys<br><b>Off</b></h1><input type="checkbox" id="sticky">
+                    <label for="sticky" id="s_label"><div id="box_2"> </div></label>
+            
+                    <h1>Filter Keys<br><b>Off</b></h1><input type="checkbox" id="filter">
+                    <label for="filter" id="f_label"><div id="box_3"></div></label>
+                    </div>
+                </div>
+                
+      
+       
     </form>
-    
+    <div id="bottom_button" >
+        <button type="button" id="button_3"><img src="./assets/network.png" alt="" id="network_icon"></button>
+        <button type="button" id="button_2"><img src="./assets/ease.png" alt="" style="margin-right: 5px;"></button>
+        <button type="button" id="button_1"><img src="./assets/shutdown.png" alt=""></button>
+    </div>
+
+
+</div>
     <script src="./windows.js"></script>
     <script src="https://kit.fontawesome.com/8fcb58d62b.js" crossorigin="anonymous"></script>
 </body>
