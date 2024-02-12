@@ -104,6 +104,7 @@ function pin() {
 //if correct signs in and relocates to next html page
     } else if (pin_input.length === 4 && pin_input === pin) {
         console.log("Signed in");
+        document.getElementById("windows_back").style.transition = 0.8 + "s";
         document.getElementById("windows_back").style.filter = "blur(0px) brightness(1)"
         document.getElementById("password_input").style.visibility = "hidden";
         document.getElementById("show_password").style.visibility = "hidden";
@@ -212,8 +213,14 @@ function loginBottons(){
     input1.addEventListener("change", function() {
         if (!input1.checked) {
             document.getElementById("box_0").style.transform = "translateX(" + 0 + "%)";
+
+         //   document.getElementById("box_0").style.backgroundColor = "grey"; 
+         //   document.getElementById("n_label").style.background = "var(--primary-color)";
         } else {
             document.getElementById("box_0").style.transform = "translateX(" + 260 + "%)";
+            
+         //   document.getElementById("box_0").style.backgroundColor = "aqua"; 
+          //  document.getElementById("n_label").style.background = "aqua"; 
             console.log("success");
         }
     });
@@ -224,7 +231,7 @@ function loginBottons(){
             document.body.classList.toggle("darktheme");
 
             document.getElementById("windows_back").style.opacity = 1;
-            document.getElementById("windows_back").style.transition = 0.8 + "s";
+          //  document.getElementById("windows_back").style.transition = 0.8 + "s";
             
             document.getElementById("box_1").style.backgroundColor = "grey"; 
             document.getElementById("d_label").style.background = "var(--primary-color)";
@@ -236,7 +243,7 @@ function loginBottons(){
             document.getElementById("d_label").style.background = "aqua"; 
 
             document.getElementById("windows_back").style.opacity = 0;
-            document.getElementById("windows_back").style.transition = 0+ "s";
+           // document.getElementById("windows_back").style.transition = 0+ "s";
             console.log("success");
         }
     });
@@ -244,8 +251,14 @@ function loginBottons(){
     input3.addEventListener("change", function() {
         if (!input3.checked) {
             document.getElementById("box_2").style.transform = "translateX(" + 0 + "%)";
+
+          //  document.getElementById("box_2").style.backgroundColor = "grey"; 
+        //    document.getElementById("s_label").style.background = "var(--primary-color)";
         } else {
             document.getElementById("box_2").style.transform = "translateX(" + 260 + "%)";
+            
+          //  document.getElementById("box_2").style.backgroundColor = "aqua"; 
+         //   document.getElementById("s_label").style.background = "aqua"; 
             console.log("success");
         }
     });
@@ -253,8 +266,14 @@ function loginBottons(){
     input4.addEventListener("change", function() {
         if (!input4.checked) {
             document.getElementById("box_3").style.transform = "translateX(" + 0 + "%)";
+
+           // document.getElementById("box_3").style.backgroundColor = "grey"; 
+           // document.getElementById("f_label").style.background = "var(--primary-color)";
         } else {
             document.getElementById("box_3").style.transform = "translateX(" + 260 + "%)";
+            
+            //document.getElementById("box_3").style.backgroundColor = "aqua"; 
+            //document.getElementById("f_label").style.background = "aqua"; 
             console.log("success");
         }
     });
