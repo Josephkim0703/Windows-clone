@@ -332,6 +332,7 @@ function drag(){
     });
 }
 
+//forget button function that does a callback on the form
 function forgot(callback){
     document.getElementById('user_input').style.visibility = 'hidden';
     document.getElementById('password_layout').style.visibility = 'hidden';
@@ -342,17 +343,17 @@ function forgot(callback){
     callback();
 }
 
+//forget function form
 function forgetQuestion(){
     let a =  document.getElementById('forget_0');
     let b = document.getElementById('forget_1');
     let c = document.getElementById('forget_2');
     let d = document.getElementById('forget_3');
 
- 
 
     document.getElementById("confirm_1").addEventListener('click', function(){
 
-   
+        //if the email or old password is incorrect error message
    if(a.value !== joseph.email || b.value !== joseph.password){
         document.getElementById("error").style.display = "block";
         document.getElementById("forget_password_questions").style.visibility = "hidden"
@@ -367,7 +368,7 @@ function forgetQuestion(){
         }
    }else{
         document.getElementById("error_message").textContent = "The passwords you typed do not match. Try again.";
-        
+         //a nested if statment if the new pass and confirmations dont match error message
         if(c.value !== d.value){
             document.getElementById("error").style.display = "block";
             document.getElementById("forget_password_questions").style.visibility = "hidden"
@@ -376,25 +377,42 @@ function forgetQuestion(){
                 document.getElementById("error").style.display = "none";
                 document.getElementById("forget_password_questions").style.visibility = "visible";
                 
-                a.value = "";
-                b.value = "";
                 c.value = "";
                 d.value = "";
             }
         }else{
-        joseph.password = d.value;
-
-        document.getElementById("forget_password_questions").style.visibility = "hidden"
-        document.getElementById("sticky_password").textContent = "Password: " + joseph.password;
-        document.getElementById('user_input').style.visibility = 'visible';
-        document.getElementById('password_layout').style.visibility = 'visible';
-        document.getElementById('forget_password').style.visibility = 'visible';
-            setTimeout(function(){
-                a.value = "";
-                b.value = "";
+            const num = /\d/;
+            const symbol = /[!@#$%&?]/;
+            document.getElementById("error_message").textContent = "Password must contain a symbol, number and be atleast 5 characters long.\n Try again.";
+            //set standards for password configurations
+            //sees if password is 5 characters long and contains atleast one symbol and num
+            if(d.value.length < 5 || !num.test(d.value) || !symbol.test(d.value)){
+                document.getElementById("error").style.display = "block";
+            document.getElementById("forget_password_questions").style.visibility = "hidden"
+    
+            document.getElementById("ok").onclick = function(){
+                document.getElementById("error").style.display = "none";
+                document.getElementById("forget_password_questions").style.visibility = "visible";
+                
                 c.value = "";
                 d.value = "";
-            },1000)
+            }
+            }else{
+                joseph.password = d.value;
+
+                document.getElementById("forget_password_questions").style.visibility = "hidden"
+                document.getElementById("sticky_password").textContent = "Password: " + joseph.password;
+                document.getElementById('user_input').style.visibility = 'visible';
+                document.getElementById('password_layout').style.visibility = 'visible';
+                document.getElementById('forget_password').style.visibility = 'visible';
+                    setTimeout(function(){
+                        a.value = "";
+                        b.value = "";
+                        c.value = "";
+                        d.value = "";
+                    },1000)
+            }
+       
         }
    }
 
