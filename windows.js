@@ -135,6 +135,7 @@ function checkPin() {
 //show password hide password function
 function show() {
     let show = document.getElementById("password_input");
+
     if (show.type === "password") {
         document.getElementById("eye").src = "./assets/hide.png";
         show.type = "text";
@@ -142,6 +143,79 @@ function show() {
         document.getElementById("eye").src = "./assets/show.png";
         show.type = "password";
     }  
+}
+
+function show2() {
+    let show_1 = document.getElementById("forget_1");
+    let show_2 = document.getElementById("forget_2");
+    let show_3 = document.getElementById("forget_3");
+
+    show_1.onclick = function(){
+        document.getElementById("show_password_2").style.visibility = "hidden";
+        document.getElementById("show_password_3").style.visibility = "hidden";
+        document.getElementById("show_password_1").style.visibility = "visible";
+
+    document.getElementById("show_password_1").onclick = function(){
+    if (show_1.type === "password") {
+        document.getElementById("eye_1").src = "./assets/hide.png";
+        show_1.type = "text";
+    } else {
+        document.getElementById("eye_1").src = "./assets/show.png";
+        show_1.type = "password";
+    } 
+    }
+    }
+
+    show_2.onclick = function(){
+        document.getElementById("show_password_1").style.visibility = "hidden";
+        document.getElementById("show_password_3").style.visibility = "hidden";
+        document.getElementById("show_password_2").style.visibility = "visible";
+
+    document.getElementById("show_password_2").onclick = function(){
+    if (show_2.type === "password") {
+        document.getElementById("eye_2").src = "./assets/hide.png";
+        show_2.type = "text";
+    } else {
+        document.getElementById("eye_2").src = "./assets/show.png";
+        show_2.type = "password";
+    } 
+    } 
+    }
+
+    show_3.onclick = function(){
+        document.getElementById("show_password_2").style.visibility = "hidden";
+        document.getElementById("show_password_1").style.visibility = "hidden";
+        document.getElementById("show_password_3").style.visibility = "visible";
+
+    document.getElementById("show_password_3").onclick = function(){
+    if (show_3.type === "password") {
+        document.getElementById("eye_3").src = "./assets/hide.png";
+        show_3.type = "text";
+    } else {
+        document.getElementById("eye_3").src = "./assets/show.png";
+        show_3.type = "password";
+    }
+    } 
+    }  
+
+    function hidden(){
+        document.getElementById("show_password_2").style.visibility = "hidden";
+        document.getElementById("show_password_1").style.visibility = "hidden";
+        document.getElementById("show_password_3").style.visibility = "hidden";
+    }
+
+    document.getElementById("forget_0").onclick = function(){
+        hidden();
+    }
+    document.getElementById("windows_back").onclick = function(){
+        hidden();
+    }
+    document.getElementById("footer").onclick = function(){
+        hidden();
+    }
+    document.getElementById("windows_form").onclick = function(){
+        hidden();
+    }
 }
 
 //these are the bottom row buttons
@@ -332,7 +406,7 @@ function drag(){
 }
 
 //forget button function that does a callback on the form
-function forgot(callback){
+function forgot(callback, show){
     document.getElementById("sticky_user").textContent = "Email: josephkim0703@gmail.com";
     document.getElementById("sticky_user").style.fontSize = 20 + "px";
     document.getElementById('user_input').style.visibility = 'hidden';
@@ -342,6 +416,7 @@ function forgot(callback){
     document.getElementById("error_message").textContent = "The email or password is incorrect. Try again.";
     document.getElementById("forget_password_questions").style.visibility = "visible";
     callback();
+    show();
 }
 
 //forget function form

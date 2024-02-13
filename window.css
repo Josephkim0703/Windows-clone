@@ -158,6 +158,21 @@ top: -7rem;
     width: 15px;
 }
 
+.show{
+  position: absolute; 
+  margin-left: 9.4rem;
+  top: 30%;
+  background: transparent;
+  border: none;
+  z-index: 5;
+  outline: none;
+  visibility: hidden;
+}
+
+.show img{
+  width: 15px;
+}
+
 ::placeholder{
 font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 font-weight: 350;

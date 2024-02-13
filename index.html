@@ -53,15 +53,18 @@
             </div>
 
             <div id="forget_password">
-                <button id="forget" type="button" onclick="forgot(forgetQuestion)">I forgot my password</button>
+                <button id="forget" type="button" onclick="forgot(forgetQuestion, show)">I forgot my password</button>
             </div>
        
             <div id="forget_password_questions">
                 <input type="text" placeholder="Email" id="forget_0">
-                <input type="password" placeholder="Old password" id="forget_1">
-                <input type="password" placeholder="New password" id="forget_2">
+                <input type="password" placeholder="Old password" id="forget_1">   
+                <button type="button" id="show_password_1" class="show" style="transform: translate(25px,1.5px);"><img id="eye_1" src="./assets/show.png" alt=""></button>
+                <input type="password" placeholder="New password" id="forget_2">   
+                <button type="button" id="show_password_2" class="show" style="transform: translate(25px,47px);"><img id="eye_2" src="./assets/show.png" alt=""></button>
                 <div id="confirm_layout" >
                 <input type="password" placeholder="Confirm password" style="width: 12.3rem;" id="forget_3">
+                <button type="button" id="show_password_3" class="show" style="transform: translate(25px,94px);"><img id="eye_3" src="./assets/show.png" alt=""></button>
                 <button type="button" id="confirm_1" ><i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </div>
