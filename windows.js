@@ -433,7 +433,26 @@ function forgetQuestion(){
             click = elements;
         };
     }
+
+    document.onkeydown = function (e) {
+        e = e || window.event;
+        if (e.keyCode == 27){
+            document.getElementById("sticky_user").style.fontSize = "";
+            document.getElementById("sticky_user").textContent = "User: josephkim0703";
+            document.getElementById("forget_password_questions").style.visibility = "hidden"
+            document.getElementById("sticky_password").textContent = "Password: " + joseph.password;
+            document.getElementById('user_input').style.visibility = 'visible';
+            document.getElementById('password_layout').style.visibility = 'visible';
+            document.getElementById('forget_password').style.visibility = 'visible';
+                a.value = "";
+                b.value = "";
+                c.value = "";
+                d.value = "";
+        }
+    };
 }
+
+
 
 drag();
 loginBottons();
