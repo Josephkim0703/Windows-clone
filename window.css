@@ -628,7 +628,7 @@ transform: skew(-4deg,-1deg) scaleX(-1);
   transform: skew(10deg, 0deg);
   margin: 0px 0px 0px 15px;
   z-index: 11;
-  width: 11rem;
+  width: 12rem;
   font-size: 1.5rem;
   font-family: "Caveat", cursive;
   color: rgba(0, 0, 0, 0.705);

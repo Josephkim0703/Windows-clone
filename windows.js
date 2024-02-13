@@ -19,7 +19,6 @@ let joseph = {
     username: "josephkim0703"
 } 
 
-
 //sets login function
 function login(callback){
 
@@ -334,6 +333,8 @@ function drag(){
 
 //forget button function that does a callback on the form
 function forgot(callback){
+    document.getElementById("sticky_user").textContent = "Email: josephkim0703@gmail.com";
+    document.getElementById("sticky_user").style.fontSize = 20 + "px";
     document.getElementById('user_input').style.visibility = 'hidden';
     document.getElementById('password_layout').style.visibility = 'hidden';
     document.getElementById('forget_password').style.visibility = 'hidden';
@@ -399,7 +400,8 @@ function forgetQuestion(){
             }
             }else{
                 joseph.password = d.value;
-
+                document.getElementById("sticky_user").style.fontSize = "";
+                document.getElementById("sticky_user").textContent = "User: josephkim0703";
                 document.getElementById("forget_password_questions").style.visibility = "hidden"
                 document.getElementById("sticky_password").textContent = "Password: " + joseph.password;
                 document.getElementById('user_input').style.visibility = 'visible';
