@@ -19,7 +19,7 @@
             <div id="sticky_text">
                 <h2>*move sticky-note</h2>
                 <h1 style="margin-top: 20px;">User: josephkim0703</h1>
-                <h1 style="margin-bottom: 10px; transform: skew(10deg, 0deg) translateX(-4px);" >Password: helloworld</h1>
+                <h1 style="margin-bottom: 10px; transform: skew(10deg, 0deg) translateX(-4px);" id="sticky_password">Password: helloworld</h1>
                 <h1 style="margin-left: 5px;  transform: skew(0deg, 1deg);">Pin: 2004</h1>
             </div>
         </div>
@@ -53,9 +53,18 @@
             </div>
 
             <div id="forget_password">
-                <button id="forget">I forgot my password</button>
+                <button id="forget" type="button" onclick="forgot(forgetQuestion)">I forgot my password</button>
             </div>
        
+            <div id="forget_password_questions">
+                <input type="text" placeholder="Email" id="forget_0">
+                <input type="password" placeholder="Old password" id="forget_1">
+                <input type="password" placeholder="New password" id="forget_2">
+                <div id="confirm_layout" >
+                <input type="password" placeholder="Confirm password" style="width: 12.3rem;" id="forget_3">
+                <button type="button" id="confirm_1" ><i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
 
         </div>    
 

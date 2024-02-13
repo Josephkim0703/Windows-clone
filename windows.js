@@ -12,34 +12,38 @@ document.getElementById("password_input").onclick = function()
     }
 }
 
+//hardcoded the password and username as they wont change
+let joseph = {
+    email: 'josephkim0703@gmail.com',
+    password: "helloworld",
+    username: "josephkim0703"
+} 
+
+
 //sets login function
 function login(callback){
-
-//hardcoded the password and username as they wont change
-const username = "josephkim0703";
-const password = "helloworld";
 
 let user_input = document.getElementById("user_input").value;
 let pass_input = document.getElementById("password_input").value;
 
 //password and username functionality if one the 2 are incorrect it will show the error message
-    if(user_input !== username || pass_input !== password){
+    if(user_input !== joseph.username || pass_input !== joseph.password){
+        document.getElementById("error_message").textContent = "The user name or password is incorrect. Try again.";
         document.getElementById("user_input").value = "";
         document.getElementById("password_input").value = "";
         document.getElementById("password_input").style.backgroundColor = "";
         document.getElementById("show_password").style.visibility = "hidden";
         console.log("incorrect password or username please try again");
         document.getElementById("user_input").style.visibility = "hidden";
-        document.getElementById("password_input").style.visibility = "hidden";
-        document.getElementById("confirm").style.visibility = "hidden";
+        document.getElementById("password_layout").style.visibility = "hidden";
         document.getElementById("error").style.display = "block";
-
+        document.getElementById("forget_password").style.visibility = "hidden";
         //error message
         document.getElementById("ok").onclick = function(){
             document.getElementById("error").style.display = "none";
             document.getElementById("user_input").style.visibility = "visible";
-            document.getElementById("password_input").style.visibility = "visible";
-            document.getElementById("confirm").style.visibility = "visible";
+            document.getElementById("password_layout").style.visibility = "visible";
+            document.getElementById("forget_password").style.visibility = "visible";
         }
     }
     //if correct signs into account and sets password to a 4 digit pin
@@ -53,6 +57,7 @@ let pass_input = document.getElementById("password_input").value;
         document.getElementById("password_input").style.visibility = "hidden";
         document.getElementById("show_password").style.visibility = "hidden";
         document.getElementById("confirm").style.visibility = "hidden";
+        document.getElementById("forget_password").style.visibility = "hidden";
 
         setTimeout(() => {
             document.getElementById("signing").style.display = "none";
@@ -291,6 +296,7 @@ function loginBottons(){
   }
 }
 
+//makes the sticky not draggable
 function drag(){
     //no idea how this works honestly got it off chatgpt
     document.addEventListener('DOMContentLoaded', function () {
@@ -325,6 +331,90 @@ function drag(){
         });
     });
 }
+
+function forgot(callback){
+    document.getElementById('user_input').style.visibility = 'hidden';
+    document.getElementById('password_layout').style.visibility = 'hidden';
+    document.getElementById('forget_password').style.visibility = 'hidden';
+    document.getElementById("show_password").style.visibility = "hidden";
+    document.getElementById("error_message").textContent = "The email or password is incorrect. Try again.";
+    document.getElementById("forget_password_questions").style.visibility = "visible";
+    callback();
+}
+
+function forgetQuestion(){
+    let a =  document.getElementById('forget_0');
+    let b = document.getElementById('forget_1');
+    let c = document.getElementById('forget_2');
+    let d = document.getElementById('forget_3');
+
+ 
+
+    document.getElementById("confirm_1").addEventListener('click', function(){
+
+   
+   if(a.value !== joseph.email || b.value !== joseph.password){
+        document.getElementById("error").style.display = "block";
+        document.getElementById("forget_password_questions").style.visibility = "hidden"
+
+        document.getElementById("ok").onclick = function(){
+            document.getElementById("error").style.display = "none";
+            document.getElementById("forget_password_questions").style.visibility = "visible";
+            a.value = "";
+            b.value = "";
+            c.value = "";
+            d.value = "";
+        }
+   }else{
+        document.getElementById("error_message").textContent = "The passwords you typed do not match. Try again.";
+        
+        if(c.value !== d.value){
+            document.getElementById("error").style.display = "block";
+            document.getElementById("forget_password_questions").style.visibility = "hidden"
+    
+            document.getElementById("ok").onclick = function(){
+                document.getElementById("error").style.display = "none";
+                document.getElementById("forget_password_questions").style.visibility = "visible";
+                
+                a.value = "";
+                b.value = "";
+                c.value = "";
+                d.value = "";
+            }
+        }else{
+        joseph.password = d.value;
+
+        document.getElementById("forget_password_questions").style.visibility = "hidden"
+        document.getElementById("sticky_password").textContent = "Password: " + joseph.password;
+        document.getElementById('user_input').style.visibility = 'visible';
+        document.getElementById('password_layout').style.visibility = 'visible';
+        document.getElementById('forget_password').style.visibility = 'visible';
+            setTimeout(function(){
+                a.value = "";
+                b.value = "";
+                c.value = "";
+                d.value = "";
+            },1000)
+        }
+   }
+
+});
+    let inputs = [a, b, c, d]
+    let click = null;
+
+    for (let elements of inputs) {
+        elements.onclick = function () {
+
+            if (click !== null) {     
+                click.style.backgroundColor = "rgba(105, 105, 105, 0.767)";
+            }
+    
+            elements.style.backgroundColor = "white";  
+            click = elements;
+        };
+    }
+}
+
 drag();
 loginBottons();
 

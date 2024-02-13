@@ -47,7 +47,7 @@ opacity: var(--main-bg);
 }
 
 #windows_page{
-  top: 32rem;
+  top: 30rem;
   left: 50%;
   position: absolute;
   transform: translate(-50%, -10rem);
@@ -178,6 +178,8 @@ letter-spacing: -0.5px;
 
 #forget_password{
   position: absolute;
+  top: 49%;
+  left: 17%;
 }
 
 #forget_password button{
@@ -191,7 +193,7 @@ letter-spacing: -0.5px;
 }
 
 #forget_password button:hover{
-  color: aqua;
+  color: rgb(168, 168, 168);
 }
 
 i{
@@ -642,5 +644,51 @@ transform: skew(-4deg,-1deg) scaleX(-1);
   font-family: "Caveat", cursive;
   color: rgba(0, 0, 0, 0.705);
   filter: blur(0.5px);
+}
+
+#forget_password_questions{
+ display: flex;
+ flex-direction: column;
+ position: relative;
+ align-items: center;
+ top: -12.1rem;
+ visibility: hidden;
+}
+
+#forget_password_questions input{
+  margin-bottom: 10px;
+  border: 1.55px solid rgb(185, 185, 185);
+  background-color: rgba(105, 105, 105, 0.767);;
+  width: 14rem;
+  height: 2rem;
+  outline: none;
+  padding-left: 5px;
+  font-size: 15px;
+}
+
+#forget_password_questions input::placeholder{
+  color:  rgb(185, 185, 185);
+}
+
+#confirm_layout{
+  display: flex;
+  flex-direction: row;
+
+ }
+
+#confirm_1{
+  position: relative; 
+  height:2.26rem;
+  width: 1.7rem;
+  border-left: none;
+  border-top:1.55px solid rgb(185, 185, 185);
+  border-right:1.55px solid rgb(185, 185, 185);
+  border-bottom:1.55px solid rgb(185, 185, 185);
+  background-color: rgba(199, 199, 199, 0.493);
+  outline: none;
+}
+
+#confirm_1:hover{
+  background-color: rgba(255, 255, 255, 0.493);
 }
 
