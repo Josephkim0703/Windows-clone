@@ -55,6 +55,10 @@
             <div id="forget_password">
                 <button id="forget" type="button" onclick="forgot(forgetQuestion, show2)">I forgot my password</button>
             </div>
+
+            <div id="forget_pin">
+                <button id="forget_pin_button" type="button" onclick="forgotPin(forgetPinQuestion)">I forgot my pin</button>
+            </div>
        
             <div id="forget_password_questions">
                 <input type="text" placeholder="Email" id="forget_0">
@@ -67,6 +71,17 @@
                 <button type="button" id="show_password_3" class="show" style="transform: translate(25px,94px);"><img id="eye_3" src="./assets/show.png" alt=""></button>
                 <button type="button" id="confirm_1" ><i class="fa-solid fa-arrow-right"></i></button>
                 </div>
+            </div>
+            
+
+            <div id="forget_pin_questions">
+                <label for="pin_0">What is your place of birth?</label>
+                    <input type="text" placeholder="Security Answer 1" id="pin_0">
+                <label for="pin_1">Your first programming language?</label>
+                    <div id="confirm_layout" >     
+                        <input type="text" placeholder="Security Answer 2" id="pin_1">
+                        <button type="button" id="confirm_2" ><i class="fa-solid fa-arrow-right" id="arrow_symbol"></i></button>
+                    </div>
             </div>
 
         </div>    

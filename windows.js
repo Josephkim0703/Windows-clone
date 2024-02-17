@@ -16,7 +16,9 @@ document.getElementById("password_input").onclick = function()
 let joseph = {
     email: 'josephkim0703@gmail.com',
     password: "helloworld",
-    username: "josephkim0703"
+    username: "josephkim0703",
+    securityone: "ontario",
+    securitytwo: "javascript",
 } 
 
 //sets login function
@@ -65,7 +67,8 @@ let pass_input = document.getElementById("password_input").value;
         document.getElementById("user_name").textContent = "Joseph Kim";
         document.getElementById("user_image").style.visibility = "hidden";
         document.getElementById("user_profile").style.backgroundImage = "url(./assets/profile1.jpg)";
-        
+        document.getElementById("forget_pin").style.display = "block";
+
         document.getElementById("confirm").style.visibility = "hidden";
         document.getElementById("eye").src = "./assets/show.png";
 
@@ -101,7 +104,9 @@ function pin() {
         document.getElementById("error").style.display = "block";
         document.getElementById("error_message").textContent = "The PIN is incorrect. Try again.";
         document.getElementById("show_password").style.visibility = "hidden"
+        document.getElementById("forget_pin").style.display = "none";
         document.getElementById("ok").onclick = function(){
+            document.getElementById("forget_pin").style.display = "block";
             document.getElementById("error").style.display = "none";
             document.getElementById("password_input").style.visibility = "visible";
             document.getElementById("show_password").style.visibility = "visible"
@@ -144,8 +149,6 @@ function show() {
         show.type = "password";
     }  
 }
-
-
 
 //these are the bottom row buttons
 function loginBottons(){
@@ -572,6 +575,117 @@ function forgetQuestion(){
         }
     };
 }
+
+function forgotPin(callback){
+    document.getElementById("sticky_user").textContent = "Q1: ontario";
+    document.getElementById("sticky_password").textContent = "Q2: javascript";
+    document.getElementById('password_input').style.display = 'none';
+    document.getElementById('forget_pin').style.visibility = 'hidden';
+    document.getElementById("show_password").style.display = 'none';
+    document.getElementById("error_message").textContent = "The answer is incorrect. Try again.";
+    document.getElementById("forget_pin_questions").style.visibility = "visible";
+    callback();
+}
+
+function forgetPinQuestion(){
+
+    let a =  document.getElementById('pin_0');
+    let b = document.getElementById('pin_1');
+
+
+    document.getElementById("confirm_2").onclick = function(){
+
+        if(a.value == "" || b.value == ""){
+        
+        }    
+        else{
+        if(a.value !== joseph.securityone){
+            document.getElementById("error").style.display = "block";
+            document.getElementById("forget_pin_questions").style.visibility = "hidden"
+    
+            document.getElementById("ok").onclick = function(){
+                document.getElementById("error").style.display = "none";
+                document.getElementById("forget_pin_questions").style.visibility = "visible";
+                a.value = "";
+            }
+        }else{
+            a.value = a.value;
+
+            if(b.value !== joseph.securitytwo){
+                document.getElementById("error").style.display = "block";
+                document.getElementById("forget_pin_questions").style.visibility = "hidden"
+        
+                document.getElementById("ok").onclick = function(){
+                    document.getElementById("error").style.display = "none";
+                    document.getElementById("forget_pin_questions").style.visibility = "visible";
+                    b.value = "";
+                }
+            }else{
+                console.log("Signed in");
+                document.getElementById("forget_pin_questions").style.visibility = "hidden";
+                document.getElementById("windows_back").style.transition = 0.8 + "s";
+                document.getElementById("windows_back").style.filter = "blur(0px) brightness(1)"
+                document.getElementById("password_input").style.visibility = "hidden";
+                document.getElementById("show_password").style.visibility = "hidden";
+                document.getElementById("welcome").style.display = "block";
+                document.getElementById("loader").style.display = "block";
+                    setTimeout(() => {
+                        window.location.href = "./windows.html";
+                    },3000);
+            }
+        }
+    }   
+}
+
+document.onkeydown = function (e) {
+    e = e || window.event;
+    if (e.keyCode == 27){
+
+   
+        document.getElementById('password_input').style.display = 'block';
+        document.getElementById('forget_pin').style.visibility = 'visible';
+        document.getElementById("show_password").style.display = 'block';
+        document.getElementById("sticky_user").style.fontSize = "";
+        document.getElementById("sticky_user").textContent = "User: josephkim0703";
+        document.getElementById("forget_pin_questions").style.visibility = "hidden"
+        document.getElementById("sticky_password").textContent = "Password: " + joseph.password;
+
+            a.value = "";
+            b.value = "";
+    }
+};
+
+function update(){
+    a.style.backgroundColor = "rgba(105, 105, 105, 0.767)";
+    b.style.backgroundColor = "rgba(105, 105, 105, 0.767)";
+    document.getElementById("arrow_symbol").style.color = "";
+}
+
+a.onclick = function(){
+    a.style.backgroundColor = "white";
+    b.style.backgroundColor = "";
+    document.getElementById("arrow_symbol").style.color = "";
+}
+
+b.onclick = function(){
+    b.style.backgroundColor = "white";
+    a.style.backgroundColor = "";
+    document.getElementById("arrow_symbol").style.color = "black";
+}
+
+document.getElementById("windows_back").onclick = function(){
+    update();
+}
+document.getElementById("footer").onclick = function(){
+    update();
+}
+document.getElementById("windows_form").onclick = function(){
+    update();
+}
+}
+
+
+
 
 
 
