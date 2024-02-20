@@ -12,7 +12,7 @@ document.getElementById("password_input").onclick = function()
     }
 }
 
-//hardcoded the password and username as they wont change
+//joseph object the contains all passwords and info
 let joseph = {
     email: 'josephkim0703@gmail.com',
     password: "helloworld",
@@ -726,7 +726,7 @@ function newpin(){
             document.getElementById('forget_pin').style.visibility = 'visible';
             document.getElementById("show_password").style.display = 'block';
             document.getElementById("forget_pin_confirm").style.display = "none";
-            
+
             joseph.pin = b.value;
             document.getElementById("sticky_pin").textContent = "Pin: "+ b.value;
         }
