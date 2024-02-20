@@ -20,7 +20,7 @@
                 <h2>*move sticky-note</h2>
                 <h1 style="margin-top: 15px;" id="sticky_user">User: josephkim0703</h1>
                 <h1 style="margin-bottom: 10px; transform: skew(10deg, 0deg) translateX(-4px);" id="sticky_password">Password: helloworld</h1>
-                <h1 style="margin-left: 5px;  transform: skew(0deg, 1deg);">Pin: 2004</h1>
+                <h1 style="margin-left: 5px;  transform: skew(0deg, 1deg);" id="sticky_pin">Pin: 2004</h1>
             </div>
         </div>
 
@@ -84,6 +84,15 @@
                     </div>
             </div>
 
+            <div id="forget_pin_confirm">
+            <input type="password" id="new_pin_input"  maxlength="4" placeholder="New pin">
+            <button type="button" id="show_pin_1" onclick="showpin2()"><img id="eye_pin_1" src="./assets/show.png" alt=""></button>
+            <div id="password_layout">
+            <input type="password" id="confirm_pin_input" placeholder="Confirm pin" maxlength="4" >
+            <button type="button" id="show_pin" onclick="showpin()"><img id="eye_pin" src="./assets/show.png" alt=""></button>
+                <button type="button" id="confirm_pin"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
         </div>    
 
               

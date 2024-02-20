@@ -104,12 +104,45 @@ background-repeat: no-repeat;
     padding-left: 5px;
 }
 
+#forget_pin_confirm{
+  display: none;
+  position: absolute;
+  top: 54%;
+}
+
+#new_pin_input{
+  font-size: 15px;
+  position: relative; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-340%);  
+  border: 1.55px solid rgb(185, 185, 185);
+  width: 14rem;
+  height: 2rem;
+  outline: none;
+  padding-left: 5px;
+}
+
+#confirm_pin_input{
+  font-size: 15px;
+  position: relative;   
+  border-right: none;
+  border-top:1.55px solid rgb(185, 185, 185);
+  border-left:1.55px solid rgb(185, 185, 185);
+  border-bottom:1.55px solid rgb(185, 185, 185);
+  width: 12.4rem;
+  height: 2rem;
+  background-color: rgba(105, 105, 105, 0.767);
+  outline: none;
+  padding-left: 5px;
+}
+
 #password_layout{
- display: flex;
- flex-direction: row;
- position: relative;
-justify-content: center;
-top: -7rem;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: center;
+  top: -7rem;
 
 }
 
@@ -156,6 +189,53 @@ top: -7rem;
 
 #show_password img{
     width: 15px;
+}
+
+#show_pin{
+  position: absolute; 
+  margin-left: 9.1rem;
+  top: 30%;
+  background: transparent;
+  border: none;
+  z-index: 5;
+  outline: none;
+  visibility: hidden;
+}
+
+#show_pin img{
+  width: 15px;
+}
+
+
+#show_pin_1{
+  position: absolute; 
+  margin-left: -2rem;
+  top: -155%;
+  background: transparent;
+  border: none;
+  z-index: 5;
+  outline: none;
+  visibility: hidden;
+}
+
+#show_pin_1 img{
+  width: 15px;
+}
+
+#confirm_pin{
+  position: relative; 
+  height:2.26rem;
+  width: 1.7rem;
+  border-left: none;
+  border-top:1.55px solid rgb(185, 185, 185);
+  border-right:1.55px solid rgb(185, 185, 185);
+  border-bottom:1.55px solid rgb(185, 185, 185);
+  background-color: rgba(199, 199, 199, 0.493);
+  outline: none;
+}
+
+#confirm_pin:hover{
+  background-color: rgba(255, 255, 255, 0.493);
 }
 
 .show{
@@ -215,7 +295,7 @@ letter-spacing: -0.5px;
   position: absolute;
   top: 41%;
   left: 29%;
-  display: none;
+  visibility: hidden;
 }
 
 #forget_pin button{

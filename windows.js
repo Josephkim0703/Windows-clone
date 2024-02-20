@@ -19,6 +19,7 @@ let joseph = {
     username: "josephkim0703",
     securityone: "ontario",
     securitytwo: "javascript",
+    pin: "2004"
 } 
 
 //sets login function
@@ -67,7 +68,7 @@ let pass_input = document.getElementById("password_input").value;
         document.getElementById("user_name").textContent = "Joseph Kim";
         document.getElementById("user_image").style.visibility = "hidden";
         document.getElementById("user_profile").style.backgroundImage = "url(./assets/profile1.jpg)";
-        document.getElementById("forget_pin").style.display = "block";
+        document.getElementById("forget_pin").style.visibility = "visible";
 
         document.getElementById("confirm").style.visibility = "hidden";
         document.getElementById("eye").src = "./assets/show.png";
@@ -94,28 +95,29 @@ let pass_input = document.getElementById("password_input").value;
 
 //once logged in you get to the pin page
 function pin() {
-    const pin = "2004";
+    
     let pin_input = document.getElementById("password_input").value;
 //checks if the length is 4 and if the pin is correct
-    if (pin_input.length === 4 && pin_input !== pin) {
+    if (pin_input.length === 4 && pin_input !== joseph.pin) {
         document.getElementById("password_input").value = "";
         console.log("Incorrect password, please try again");
         document.getElementById("password_input").style.visibility = "hidden";
         document.getElementById("error").style.display = "block";
         document.getElementById("error_message").textContent = "The PIN is incorrect. Try again.";
-        document.getElementById("show_password").style.visibility = "hidden"
+        document.getElementById("show_password").style.visibility = "hidden";
         document.getElementById("forget_pin").style.display = "none";
         document.getElementById("ok").onclick = function(){
             document.getElementById("forget_pin").style.display = "block";
             document.getElementById("error").style.display = "none";
             document.getElementById("password_input").style.visibility = "visible";
-            document.getElementById("show_password").style.visibility = "visible"
+            document.getElementById("show_password").style.visibility = "visible";
     }
 //if correct signs in and relocates to next html page
-    } else if (pin_input.length === 4 && pin_input === pin) {
+    } else if (pin_input.length === 4 && pin_input === joseph.pin) {
         console.log("Signed in");
+        document.getElementById("forget_pin").style.visibility = "hidden"; 
         document.getElementById("windows_back").style.transition = 0.8 + "s";
-        document.getElementById("windows_back").style.filter = "blur(0px) brightness(1)"
+        document.getElementById("windows_back").style.filter = "blur(0px) brightness(1)";
         document.getElementById("password_input").style.visibility = "hidden";
         document.getElementById("show_password").style.visibility = "hidden";
         document.getElementById("welcome").style.display = "block";
@@ -576,6 +578,7 @@ function forgetQuestion(){
     };
 }
 
+//forget pin function button
 function forgotPin(callback){
     document.getElementById("sticky_user").textContent = "Q1: ontario";
     document.getElementById("sticky_password").textContent = "Q2: javascript";
@@ -587,6 +590,7 @@ function forgotPin(callback){
     callback();
 }
 
+//security question check
 function forgetPinQuestion(){
 
     let a =  document.getElementById('pin_0');
@@ -594,11 +598,11 @@ function forgetPinQuestion(){
 
 
     document.getElementById("confirm_2").onclick = function(){
-
+        //checks if the inputs are empty
         if(a.value == "" || b.value == ""){
         
         }    
-        else{
+        else{//if a.value does match answer error message
         if(a.value !== joseph.securityone){
             document.getElementById("error").style.display = "block";
             document.getElementById("forget_pin_questions").style.visibility = "hidden"
@@ -611,7 +615,7 @@ function forgetPinQuestion(){
         }else{
             a.value = a.value;
 
-            if(b.value !== joseph.securitytwo){
+            if(b.value !== joseph.securitytwo){//if b.value does match answer error message
                 document.getElementById("error").style.display = "block";
                 document.getElementById("forget_pin_questions").style.visibility = "hidden"
         
@@ -620,18 +624,11 @@ function forgetPinQuestion(){
                     document.getElementById("forget_pin_questions").style.visibility = "visible";
                     b.value = "";
                 }
-            }else{
-                console.log("Signed in");
-                document.getElementById("forget_pin_questions").style.visibility = "hidden";
-                document.getElementById("windows_back").style.transition = 0.8 + "s";
-                document.getElementById("windows_back").style.filter = "blur(0px) brightness(1)"
-                document.getElementById("password_input").style.visibility = "hidden";
-                document.getElementById("show_password").style.visibility = "hidden";
-                document.getElementById("welcome").style.display = "block";
-                document.getElementById("loader").style.display = "block";
-                    setTimeout(() => {
-                        window.location.href = "./windows.html";
-                    },3000);
+            }else{//if match then calls newpin function
+                document.getElementById("error_message").textContent = "The pins you typed do not match. Try again."
+                document.getElementById("forget_pin_questions").style.visibility = "hidden"
+                document.getElementById("forget_pin_confirm").style.display = "block"
+                newpin();
             }
         }
     }   
@@ -684,10 +681,83 @@ document.getElementById("windows_form").onclick = function(){
 }
 }
 
+//create new pin
+function newpin(){
 
+    let a = document.getElementById("new_pin_input")
+    let b = document.getElementById("confirm_pin_input");
 
+    document.getElementById("new_pin_input").onclick = function(){
+      document.getElementById("show_pin_1").style.visibility = "visible";
+      document.getElementById("show_pin").style.visibility = "hidden";  
+      document.getElementById("confirm_pin_input").type = "password";
+        document.getElementById("eye_pin").src = "./assets/show.png";  
+    };
+    
+    document.getElementById("confirm_pin_input").onclick = function(){
+        document.getElementById("show_pin").style.visibility = "visible";   
+        document.getElementById("show_pin_1").style.visibility = "hidden"; 
+        document.getElementById("new_pin_input").type = "password";
+        document.getElementById("eye_pin_1").src = "./assets/show.png";
+    };
 
+    document.getElementById("confirm_pin").onclick = function(){
+        //if the values of both dont match each other then error message is displayed
+        if(a.value !== b.value){
+            document.getElementById("error").style.display = "block";
+            document.getElementById("forget_pin_confirm").style.visibility = "hidden"
+            document.getElementById("show_pin").style.visibility = "hidden";   
+            document.getElementById("show_pin_1").style.visibility = "hidden";
+            document.getElementById("confirm_pin_input").type = "password";
+            document.getElementById("new_pin_input").type = "password";
+            document.getElementById("eye_pin_1").src = "./assets/show.png";
+            document.getElementById("eye_pin").src = "./assets/show.png";
 
+            document.getElementById("ok").onclick = function(){
+                
+                document.getElementById("error").style.display = "none";
+                document.getElementById("forget_pin_confirm").style.visibility = "visible";
+                a.value = "";
+                b.value = "";
+            }
+        }else{//if they match then it sets joseph.pin to the new pin value
+            document.getElementById("error_message").textContent = "The PIN is incorrect. Try again."
+            document.getElementById('password_input').style.display = 'block';
+            document.getElementById('forget_pin').style.visibility = 'visible';
+            document.getElementById("show_password").style.display = 'block';
+            document.getElementById("forget_pin_confirm").style.display = "none";
+            
+            joseph.pin = b.value;
+            document.getElementById("sticky_pin").textContent = "Pin: "+ b.value;
+        }
+}
+}
+
+function showpin() {
+    let show = document.getElementById("confirm_pin_input");
+
+    if (show.type === "password") {
+        document.getElementById("eye_pin").src = "./assets/hide.png";
+        show.type = "text";
+    } else {
+        document.getElementById("eye_pin").src = "./assets/show.png";
+        show.type = "password";
+    }  
+
+}
+
+function showpin2() {
+    
+    let show = document.getElementById("new_pin_input");
+
+    if (show.type === "password") {
+        document.getElementById("eye_pin_1").src = "./assets/hide.png";
+        show.type = "text";
+    } else {
+        document.getElementById("eye_pin_1").src = "./assets/show.png";
+        show.type = "password";
+    }  
+}
 
 drag();
 loginBottons();
