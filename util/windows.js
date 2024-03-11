@@ -702,6 +702,7 @@ function newpin(){
     };
 
     document.getElementById("confirm_pin").onclick = function(){
+      
         //if the values of both dont match each other then error message is displayed
         if(a.value !== b.value){
             document.getElementById("error").style.display = "block";
@@ -730,7 +731,7 @@ function newpin(){
             joseph.pin = b.value;
             document.getElementById("sticky_pin").textContent = "Pin: "+ b.value;
         }
-}
+    }
 }
 
 function showpin() {
