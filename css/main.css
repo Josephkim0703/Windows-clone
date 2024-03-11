@@ -90,3 +90,31 @@ footer input:hover{
     filter: invert();
 }
 
+#right_buttons{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left: 76.2rem;
+    
+}
+
+#right_buttons i{
+    color: white;
+}
+
+#right_buttons button{
+    width: 30px;
+}
+
+#time{
+    padding-bottom: 10px;
+    color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 200;
+    font-size: 12px;
+    width: 30%;
+    letter-spacing: 0.7px;
+}
+
+
+
