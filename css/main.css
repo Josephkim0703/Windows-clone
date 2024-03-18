@@ -10,8 +10,8 @@ body{
     z-index: 0;
     min-width: 1920px;
     min-height: 1080px;
-   
 }
+
 
 #taskbar{
     margin: 0;
@@ -126,8 +126,6 @@ footer button:hover{
 }
 
 #middle_buttons{
-    display: flex;
-    flex-direction: row;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
