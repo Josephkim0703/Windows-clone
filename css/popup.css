@@ -1,0 +1,13 @@
+#popups div{
+
+}
+
+#hidden_icon{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: transparent;
+    background-color: aqua;
+    width: 100%;
+    height: 5rem;
+}

@@ -4,11 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/popup.css">
     <title>Document</title>
 </head>
 <body>
 <div id="container">
 
+    <div id="popups">
+        <div id="hidden_icon">
+            <ul id="hidden_icon_apps">
+            </ul>
+        </div>
+        <div id="soundbar"></div>
+        <div id="internet"></div>
+        <div id="time_popup"></div>
+        <div id="noti_popup"></div>
+    </div>
 
     <footer>
         <div id="taskbar">
@@ -18,20 +29,18 @@
                 <input type="text" id="searchbar" placeholder="Type here to search">
             <button id="task_view"><img src="./assets/task_view.png" alt=""></button>
         </div>
-        
         <div id="middle_buttons">
             <ul id="pin_taskbar">
-              
             </ul>
         </div>
 
         <div id="right_buttons">
             <button id="app_tabs"><i class="fa-solid fa-chevron-up"></i></button>
-            <button id="sound"><i class="fa-solid fa-volume-high"></i></button>
+            <button id="sound"><img src="./assets/sound.png" alt=""></button>
             <button id="internet"><img src="./assets/network.png" alt=""></button>
-            <button id="time" style="width: 40%;">0:00 <br>0000-00-00</button>
-            <button id="news"><i class="fa-sharp fa-light fa-message-middle"></i></button>
-            <button id="close_tab" style="border-left: 0.5px solid rgba(255, 255, 255, 0.5); width: 0.2rem;"></button>
+            <button id="time" style="width: 40%;"></button>
+            <button id="news" style="width: 2.5rem; margin-right: 8px;"><img src="./assets/noti.png" alt=""></button>
+            <button id="close_tab" style="border-left: 0.5px solid rgba(255, 255, 255, 0.5); width: 10px;"></button>
         </div>
         </div>
     </footer>

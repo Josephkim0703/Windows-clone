@@ -111,6 +111,10 @@ footer button:hover{
     
 }
 
+#right_buttons img{
+    width: 1.1rem;
+}
+
 #time{
     padding-bottom: 10px;
     color: white;
@@ -118,24 +122,30 @@ footer button:hover{
     font-weight: 200;
     font-size: 12px;
     width: 30%;
-    letter-spacing: 0.7px;
+    letter-spacing: 0.5px;
 }
 
 #middle_buttons{
     display: flex;
     flex-direction: row;
-    border: 1px solid white;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-left: -10rem;
+    margin-left: -20rem;
 }
 
 #pin_taskbar button{
-   
+    transform: translateY(-36%);
 }
 
+#pin_taskbar img{
+    width: 70%;
+    margin: 5.3px;
+}
 
+#news img{
+   width: 1.4rem;
+}
 
 
 
