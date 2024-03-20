@@ -19,6 +19,7 @@
     flex-wrap: wrap;
     border: none;
     background-color: white;
+    width: 2.3rem;
     height: 100%;
     visibility: visible;
     transform: translateX(-12.2rem);

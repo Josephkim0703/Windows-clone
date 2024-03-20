@@ -15,41 +15,7 @@ const allapps = [
         logo: "./assets/github.png",
         link: "https://github.com/Josephkim0703"
     },
-    {
-        name: "Github",
-        logo: "./assets/github.png",
-        link: "https://github.com/Josephkim0703"
-    },
-    {
-        name: "Github",
-        logo: "./assets/github.png",
-        link: "https://github.com/Josephkim0703"
-    },
-    {
-        name: "Github",
-        logo: "./assets/github.png",
-        link: "https://github.com/Josephkim0703"
-    },
-    {
-        name: "Github",
-        logo: "./assets/github.png",
-        link: "https://github.com/Josephkim0703"
-    },
-    {
-        name: "Github",
-        logo: "./assets/github.png",
-        link: "https://github.com/Josephkim0703"
-    },
-    {
-        name: "Github",
-        logo: "./assets/github.png",
-        link: "https://github.com/Josephkim0703"
-    },
-    {
-        name: "Github",
-        logo: "./assets/github.png",
-        link: "https://github.com/Josephkim0703"
-    },
+   
     
 ]
 

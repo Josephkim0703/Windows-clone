@@ -86,20 +86,12 @@ for(let i = 0; i < allapps.length; i++) {
 }
 iconArr.push(data);
 document.getElementById("hidden_icon_apps").innerHTML = iconArr;
+console.log(iconArr)
 
-switch(iconArr.length) {
-    case 2:
-        document.getElementById("hidden_icon_apps").style.width = 4.6 + "rem";
-        break;
-    case 5:
-        document.getElementById("hidden_icon_apps").style.width = 6.9 + "rem";
-        break;
-    case 10:
-        document.getElementById("hidden_icon_apps").style.width = 9.2 + "rem";
-        break;
-    default:
-        break;
-}
+if (iconArr.length = 2) {
+    document.getElementById("hidden_icon_apps").style.width = 4.6 + "rem";
+} 
+
 
 }
 
