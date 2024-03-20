@@ -1,11 +1,11 @@
 const apps = [
     {
-        name: "chrome",
+        name: "Chrome",
         logo: "./assets/chrome.png",
         status: "off"
     },
     {
-        name: "folder",
+        name: "File Explorer",
         logo: "./assets/file.png",
         status: "off"
     },
@@ -13,12 +13,11 @@ const apps = [
 
 const allapps = [
     {
-        name: "github",
+        name: "Github",
         logo: "./assets/github.png",
         link: "https://github.com/Josephkim0703",
         status: "on"
     },
-    
 ]
 
 export {apps,allapps}
