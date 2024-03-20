@@ -79,18 +79,28 @@ document.getElementById("app_tabs").onclick = function() {
 };
 
 let iconArr = [];
-let data = "";
 
 for(let i = 0; i < allapps.length; i++) {
+    let data = "";
     data += '<button type="button" id="hiddenApp' + i + '"><a href= "' + allapps[i].link +'"><img src="'+ allapps[i].logo +'" alt=""></a></button>';
+    iconArr.push(data);
 }
-iconArr.push(data);
-document.getElementById("hidden_icon_apps").innerHTML = iconArr;
-console.log(iconArr)
+document.getElementById("hidden_icon_apps").innerHTML = iconArr.join("");
 
-if (iconArr.length = 2) {
-    document.getElementById("hidden_icon_apps").style.width = 4.6 + "rem";
+console.log(iconArr);
+
+if (iconArr.length > 1 && iconArr.length < 5){
+    document.getElementById("hidden_icon_apps").style.width = 4.4 + "rem";
+}
+else if (iconArr.length >= 5 && iconArr.length < 10){
+    document.getElementById("hidden_icon_apps").style.width = 6.6 + "rem";
 } 
+else  if (iconArr.length >= 10 && iconArr.length < 13){
+    document.getElementById("hidden_icon_apps").style.width = 8.8 + "rem";
+}
+else  if (iconArr.length >= 13){
+    document.getElementById("hidden_icon_apps").style.width = 11 + "rem";
+}
 
 
 }
