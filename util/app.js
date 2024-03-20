@@ -6,7 +6,51 @@ const apps = [
     {
         name: "folder",
         logo: "./assets/file.png"
-    }
+    },
 ]
 
-export {apps}
+const allapps = [
+    {
+        name: "Github",
+        logo: "./assets/github.png",
+        link: "https://github.com/Josephkim0703"
+    },
+    {
+        name: "Github",
+        logo: "./assets/github.png",
+        link: "https://github.com/Josephkim0703"
+    },
+    {
+        name: "Github",
+        logo: "./assets/github.png",
+        link: "https://github.com/Josephkim0703"
+    },
+    {
+        name: "Github",
+        logo: "./assets/github.png",
+        link: "https://github.com/Josephkim0703"
+    },
+    {
+        name: "Github",
+        logo: "./assets/github.png",
+        link: "https://github.com/Josephkim0703"
+    },
+    {
+        name: "Github",
+        logo: "./assets/github.png",
+        link: "https://github.com/Josephkim0703"
+    },
+    {
+        name: "Github",
+        logo: "./assets/github.png",
+        link: "https://github.com/Josephkim0703"
+    },
+    {
+        name: "Github",
+        logo: "./assets/github.png",
+        link: "https://github.com/Josephkim0703"
+    },
+    
+]
+
+export {apps,allapps}

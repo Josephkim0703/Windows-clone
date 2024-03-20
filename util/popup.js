@@ -1,4 +1,9 @@
+import { apps , allapps } from "./app.js";
+
+function main() {
 popup_network();
+hidden_icon(allapps);
+}
 
 function popup_network() {
 
@@ -32,7 +37,7 @@ document.getElementById("airplane_mode").onclick = function () {
             icon.style.transition = 0.3 + "s";
             status.style.opacity = 0;
             icon.style.opacity = 1;
-        },1500);
+        },1000);
 
         document.getElementById("network_icon").src = "./assets/airplane1.png";
         document.getElementById("airplane_text").textContent = "Network mode";
@@ -49,7 +54,7 @@ document.getElementById("airplane_mode").onclick = function () {
             icon.style.transition = 0.3 + "s";
             status.style.opacity = 0;
             icon.style.opacity = 1;
-        },1500);
+        },1000);
 
         document.getElementById("network_icon").src = "./assets/network.png";
         document.getElementById("airplane_text").textContent = "Airplane mode";
@@ -58,3 +63,44 @@ document.getElementById("airplane_mode").onclick = function () {
     airplane = !airplane;
 };
 }
+
+function hidden_icon(allapps){
+
+let show = false;
+
+document.getElementById("app_tabs").onclick = function() {
+    if (!show) {
+        document.getElementById("hidden_icon").style.visibility = "visible";
+        show = true;
+    } else {
+        document.getElementById("hidden_icon").style.visibility = "hidden";
+        show = false;
+    }
+};
+
+let iconArr = [];
+let data = "";
+
+for(let i = 0; i < allapps.length; i++) {
+    data += '<button type="button" id="hiddenApp' + i + '"><a href= "' + allapps[i].link +'"><img src="'+ allapps[i].logo +'" alt=""></a></button>';
+}
+iconArr.push(data);
+document.getElementById("hidden_icon_apps").innerHTML = iconArr;
+
+switch(iconArr.length) {
+    case 2:
+        document.getElementById("hidden_icon_apps").style.width = 4.6 + "rem";
+        break;
+    case 5:
+        document.getElementById("hidden_icon_apps").style.width = 6.9 + "rem";
+        break;
+    case 10:
+        document.getElementById("hidden_icon_apps").style.width = 9.2 + "rem";
+        break;
+    default:
+        break;
+}
+
+}
+
+main();

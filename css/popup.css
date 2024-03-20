@@ -1,3 +1,9 @@
+
+:root{
+    --primary-color: rgb(226, 226, 226);
+    --secondary-color: rgba(185, 185, 185, 0.562);
+}
+
 #popups div{
     position: fixed;
     bottom: 45px;
@@ -7,27 +13,41 @@
 
 }
 
-#network:hover{
-    background-color: rgba(150, 150, 150, 0.562);
-}
-
-#hidden_icon{
+#hidden_icon_apps{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    border: transparent;
+    border: none;
     background-color: white;
-    width: 2rem;
-    height: 2rem;
-    transform: translateX(88rem);
-    visibility: hidden;
+    height: 100%;
+    visibility: visible;
+    transform: translateX(-12.2rem);
+    margin: 0;
+    padding: 0;
+}
+
+#hidden_icon button{
+    width: 2.3rem;
+    height: 2.3rem;
+    border: none;
+    background: transparent;
+   
+}
+
+#hidden_icon button:hover{
+    background: var(--secondary-color);
+}
+
+#hidden_icon img{
+    margin-top: 3px;
+    width: 80%;
 }
 
 #internet_popup{
     border: none;
     width: 20rem;
     height:10rem;
-    background-color:rgb(255, 255, 255);
+    background-color: var(--primary-color);
     display: flex;
     flex-direction: column;   
     visibility: hidden;
@@ -61,19 +81,23 @@
     color: black;
     height: 3.5rem;
     width: 100%;
-    background-color:rgb(255, 255, 255);
+    background-color:var(--primary-color);
     border: none;
     text-align: left;
     display: flex;
     margin: 10px 0px;
+}
+
+#network:hover{
+    background-color:var(--secondary-color);
 }
   
 #airplane_mode{
     color: black;
     height: 4.5rem;
     width: 7rem;
-    background-color:rgba(153, 153, 153, 0.349);
-    border: 2px solid white;
+    background-color:rgba(170, 170, 170, 0.349);
+    border: 2px solid var(--primary-color);
     text-align: left;
     display: flex;
     flex-direction: column;

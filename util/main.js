@@ -1,7 +1,9 @@
 import { apps } from "./app.js";
 
 function main(){
+    //makes date and time reset every second
     setInterval(time, 1000);
+    
     pinApp(apps);
 }
 
