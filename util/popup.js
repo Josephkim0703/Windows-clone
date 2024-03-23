@@ -70,28 +70,61 @@ let show = false;
 
 document.getElementById("app_tabs").onclick = function() {
     if (!show) {
-        document.getElementById("hidden_icon").style.visibility = "visible";
+        document.getElementById("hidden_icon_apps").style.visibility = "visible";
         show = true;
     } else {
-        document.getElementById("hidden_icon").style.visibility = "hidden";
+        document.getElementById("hidden_icon_apps").style.visibility = "hidden";
         show = false;
     }
 };
 
 let iconArr = [];
-let data = "";
 
 for(let i = 0; i < allapps.length; i++) {
-    data += '<button type="button" id="hiddenApp' + i + '"><a href= "' + allapps[i].link +'"><img src="'+ allapps[i].logo +'" alt=""></a></button>';
+    let data = "";
+        data += '<button type="button" id="hiddenApp' + i + '"><a href= "' + allapps[i].link +'"><img src="'+ allapps[i].logo +'" alt=""></a></button>';
+    iconArr.push(data);
 }
-iconArr.push(data);
-document.getElementById("hidden_icon_apps").innerHTML = iconArr;
-console.log(iconArr)
+document.getElementById("hidden_icon_apps").innerHTML = iconArr.join("");
 
-if (iconArr.length = 2) {
-    document.getElementById("hidden_icon_apps").style.width = 4.6 + "rem";
+function tabSize(){
+
+if (iconArr.length > 1 && iconArr.length < 5){
+    document.getElementById("hidden_icon_apps").style.width = 4.4 + "rem";
+    document.getElementById("hidden_icon_apps").style.transform = "translateX(-"+ 11.2 +"rem)";
+}
+else if (iconArr.length >= 5 && iconArr.length < 10){
+    document.getElementById("hidden_icon_apps").style.width = 6.6 + "rem";
+    document.getElementById("hidden_icon_apps").style.transform = "translateX(-"+ 10 +"rem)";
 } 
+else  if (iconArr.length >= 10 && iconArr.length < 13){
+    document.getElementById("hidden_icon_apps").style.width = 8.8 + "rem";
+    document.getElementById("hidden_icon_apps").style.transform = "translateX(-"+ 9 +"rem)";
+}
+else  if (iconArr.length >= 13){
+    document.getElementById("hidden_icon_apps").style.width = 11 + "rem";
+    document.getElementById("hidden_icon_apps").style.transform = "translateX(-"+ 7.9 +"rem)";
+}
 
+function math(){
+
+
+}
+}
+
+tabSize(); 
+//Add hover feature that shows name of application
+
+let hiddenIcon = document.getElementById("icon_hover");
+
+for(let i = 0; i < iconArr.length; i++){
+
+    document.getElementById("hiddenApp" + i).addEventListener("mouseover", (e) =>{
+        
+       hiddenIcon.style.visibility = "visible";
+    });
+}
+//Add exit/close application 
 
 }
 

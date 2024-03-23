@@ -9,16 +9,15 @@ function main(){
 
 function pinApp(apps){
 
-    let data = "";
     let pinned = [];
 
     for(let i = 0; i < apps.length; i++){
-        data += '<button type="button" id="app' + i + '"><img src="'+ apps[i].logo +'"></button>';
-        
+        let data = "";
+            data += '<button type="button" id="app' + i + '"><img src="'+ apps[i].logo +'"></button>'; 
+        pinned.push(data);
     }
-    pinned.push(data);
+  
     document.getElementById("pin_taskbar").innerHTML = pinned;
-
     
 }
 
