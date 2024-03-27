@@ -3,13 +3,16 @@ import { apps , allapps } from "./app.js";
 function main() {
 popup_network();
 hidden_icon(allapps);
+
 }
 
 function popup_network() {
 
 let show = false;
 
-document.getElementById("internet").onclick = function() {
+const tab = document.getElementById("internet");
+tab.onclick = function() {
+    closeTabs(tab)
     if (!show) {
         document.getElementById("internet_popup").style.visibility = "visible";
         show = true;
@@ -68,7 +71,10 @@ function hidden_icon(allapps){
 
 let show = false;
 
-document.getElementById("app_tabs").onclick = function() {
+const tab = document.getElementById("app_tabs");
+
+tab.onclick = function() {
+closeTabs(tab)
     if (!show) {
         document.getElementById("hidden_icon_apps").style.visibility = "visible";
         show = true;
@@ -80,7 +86,7 @@ document.getElementById("app_tabs").onclick = function() {
 
 let iconArr = [];
 
-for(let i = 0; i < allapps.length; i++) {
+for(let i = 0; i < allapps.length; i++){
     let data = "";
         data += '<button type="button" id="hiddenApp' + i + '"><a href= "' + allapps[i].link +'"><img src="'+ allapps[i].logo +'" alt=""></a></button>';
     iconArr.push(data);
@@ -106,10 +112,6 @@ else  if (iconArr.length >= 13){
     document.getElementById("hidden_icon_apps").style.transform = "translateX(-"+ 7.9 +"rem)";
 }
 
-function math(){
-
-
-}
 }
 
 tabSize(); 
@@ -125,6 +127,30 @@ for(let i = 0; i < iconArr.length; i++){
     });
 }
 //Add exit/close application 
+
+}
+
+function closeTabs(currentButton) {
+    
+    let previousTab = null;
+    let currentTab = currentButton;
+
+    const tabNetwork = document.getElementById("internet_popup");
+    const tabHidden = document.getElementById("hidden_icon");
+    const tabSound = document.getElementById("soundbar");
+
+    let tabs = [tabNetwork, tabHidden, tabSound];
+
+    for(let i = 0; i < tabs.length; i++){
+
+    if(currentTab){
+    
+     
+        currentTab = previousTab;
+        previousTab = null
+    }
+
+}
 
 }
 
