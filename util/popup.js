@@ -135,6 +135,7 @@ function closeTabs() {
             }); 
 
             document.getElementById("taskbar").onclick = function(e) { 
+                //if the mouse target isnt right button do this
                 if (!e.target.closest('#right_buttons')) {
                     tabs[i].style.visibility = "hidden";
                     show = false;
