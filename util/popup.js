@@ -8,20 +8,6 @@ hidden_icon(allapps);
 
 function popup_network() {
 
-let show = false;
-
-const tab = document.getElementById("internet");
-tab.onclick = function() {
-    closeTabs(tab)
-    if (!show) {
-        document.getElementById("internet_popup").style.visibility = "visible";
-        show = true;
-    } else {
-        document.getElementById("internet_popup").style.visibility = "hidden";
-        show = false;
-    }
-};
-
 let airplane = false;
 
 document.getElementById("airplane_mode").onclick = function () {
@@ -65,24 +51,11 @@ document.getElementById("airplane_mode").onclick = function () {
 
     airplane = !airplane;
 };
+
+closeTabs()
 }
 
 function hidden_icon(allapps){
-
-let show = false;
-
-const tab = document.getElementById("app_tabs");
-
-tab.onclick = function() {
-closeTabs(tab)
-    if (!show) {
-        document.getElementById("hidden_icon_apps").style.visibility = "visible";
-        show = true;
-    } else {
-        document.getElementById("hidden_icon_apps").style.visibility = "hidden";
-        show = false;
-    }
-};
 
 let iconArr = [];
 
@@ -114,6 +87,7 @@ else  if (iconArr.length >= 13){
 
 }
 
+closeTabs();
 tabSize(); 
 //Add hover feature that shows name of application
 
@@ -126,32 +100,54 @@ for(let i = 0; i < iconArr.length; i++){
        hiddenIcon.style.visibility = "visible";
     });
 }
-//Add exit/close application 
-
 }
 
-function closeTabs(currentButton) {
+function closeTabs() {
     
-    let previousTab = null;
-    let currentTab = currentButton;
+    const buttonhidden = document.getElementById("app_tabs");
+    const buttonSound = document.getElementById("sound");
+    const buttonNetwork = document.getElementById("internet");
 
-    const tabNetwork = document.getElementById("internet_popup");
-    const tabHidden = document.getElementById("hidden_icon");
-    const tabSound = document.getElementById("soundbar");
+    const tabsHidden = document.getElementById("hidden_icon_apps");
+    const tabsSound = document.getElementById("soundbar");
+    const tabsNetwork = document.getElementById("internet_popup");
 
-    let tabs = [tabNetwork, tabHidden, tabSound];
+    const tabs = [tabsHidden, tabsSound, tabsNetwork];
 
-    for(let i = 0; i < tabs.length; i++){
+    const buttons = [buttonhidden, buttonSound, buttonNetwork];
 
-    if(currentTab){
-    
-     
-        currentTab = previousTab;
-        previousTab = null
+  let show = null;
+
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].onclick = function() {
+
+            if (!show) {
+                tabs[i].style.visibility = "visible";
+                show = true;
+            } else {
+                tabs[i].style.visibility = "hidden";
+                show = false;
+            }  
+
+            document.getElementById("background").addEventListener("click", () =>{
+                tabs[i].style.visibility = "hidden";
+                show = false;
+            }); 
+
+            document.getElementById("taskbar").onclick = function(e) { 
+                if (!e.target.closest('#right_buttons')) {
+                    tabs[i].style.visibility = "hidden";
+                    show = false;
+                }
+            };
+
+                    
+        };
     }
 
+  
 }
 
-}
+closeTabs()
 
 main();

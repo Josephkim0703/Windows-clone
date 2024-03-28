@@ -18,7 +18,16 @@ const allapps = [
         link: "https://github.com/Josephkim0703",
         status: "on"
     },
-   
+    {
+        name: "Chrome",
+        logo: "./assets/chrome.png",
+        status: "off"
+    },
+    {
+        name: "File Explorer",
+        logo: "./assets/file.png",
+        status: "off"
+    },
     
 ]
 
