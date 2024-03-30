@@ -3,7 +3,7 @@ import { apps , allapps } from "./app.js";
 function main() {
 popup_network();
 hidden_icon(allapps);
-
+closeTabs();
 }
 
 function popup_network() {
@@ -52,7 +52,7 @@ document.getElementById("airplane_mode").onclick = function () {
     airplane = !airplane;
 };
 
-closeTabs()
+
 }
 
 function hidden_icon(allapps){
@@ -87,7 +87,7 @@ else  if (iconArr.length >= 13){
 
 }
 
-closeTabs();
+
 tabSize(); 
 //Add hover feature that shows name of application
 
@@ -116,7 +116,7 @@ function closeTabs() {
 
     const buttons = [buttonhidden, buttonSound, buttonNetwork];
 
-  let show = null;
+    let show = null;
 
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].onclick = function() {
@@ -140,15 +140,9 @@ function closeTabs() {
                     tabs[i].style.visibility = "hidden";
                     show = false;
                 }
-            };
-
-                    
+            };                   
         };
     }
-
-  
 }
-
-closeTabs()
 
 main();
