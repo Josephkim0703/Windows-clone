@@ -32,9 +32,14 @@ function time(){
     let month = x.getMonth() + 1;
 
     let time = (x.getHours() - 12) + ":" + x.getMinutes().toString().padStart(2, '0') + " " + y;
-    let date = x.getFullYear() + "-" + (month.toString().padStart(2, '0')) + "-" + x.getDate().toString().padStart(2, '0');
+    let date = (month.toString().padStart(2, '0')) + "/" + x.getDate().toString().padStart(2, '0')+ "/" + x.getFullYear();
 
     document.getElementById("time").innerHTML = time + "<br>" + date;
+}
+
+//inject desktop active apps to taskbar and hidden tabs
+function inject(){
+
 }
 
 function drag(){
