@@ -1,4 +1,5 @@
 import { apps, desktopapps } from "./app.js";
+import { grab } from "./app.js";
 
 function main(){
     //makes date and time reset every second
@@ -6,6 +7,7 @@ function main(){
     
     pinApp(apps);
     desktopApp(desktopapps);
+    inject(desktopapps, grab)
 }
 
 function pinApp(apps){
@@ -32,7 +34,7 @@ function desktopApp(apps){
         pinned.push(data);
     }
 
-    document.getElementById("desktop_app").innerHTML = pinned;
+    document.getElementById("desktop_app").innerHTML = pinned.join(" ");
 
 }
 
@@ -53,9 +55,26 @@ function time(){
 }
 
 //inject desktop active apps to taskbar and hidden tabs
-function inject(){
+function inject( dapps, grab){
 
- 
+    let pinned = [];
+
+    for(let i = 0; i < dapps.length; i++){
+        let data = "";
+            data += '<button type="button" id="app' + i + '"><img src="'+ dapps[i].logo +'"><p>'+ dapps[i].name +'</p></button>'; 
+        pinned.push(data);
+    }
+
+    for(let i = 0; i < dapps.length; i++){
+    let option = document.getElementById("app" + i);
+
+    option.addEventListener("click", function(){
+        //it grab this which is the current option then replaces the id app with nothing to isolate the number
+        let index = parseInt(this.id.replace("app", ""));
+        grab(dapps[index]);
+    });
+ }
+
 }
 
 

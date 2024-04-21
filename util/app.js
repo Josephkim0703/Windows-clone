@@ -1,3 +1,22 @@
+const storage = [
+    {
+        name: "Chrome",
+        logo: "./assets/chrome.png",
+        status: "off"
+    },
+    {
+        name: "File Explorer",
+        logo: "./assets/file.png",
+        status: "off"
+    }, 
+    {
+        name: "Github",
+        logo: "./assets/github.png",
+        link: "https://github.com/Josephkim0703",
+        status: "on"
+    }
+]
+
 const apps = [
     {
         name: "Chrome",
@@ -9,6 +28,12 @@ const apps = [
         logo: "./assets/file.png",
         status: "off"
     },
+    {
+        name: "Github",
+        logo: "./assets/github.png",
+        link: "https://github.com/Josephkim0703",
+        status: "on"
+    },
 ]
 
 const allapps = [
@@ -17,17 +42,7 @@ const allapps = [
         logo: "./assets/github.png",
         link: "https://github.com/Josephkim0703",
         status: "on"
-    },
-    {
-        name: "Chrome",
-        logo: "./assets/chrome.png",
-        status: "off"
-    },
-    {
-        name: "File Explorer",
-        logo: "./assets/file.png",
-        status: "off"
-    },
+    }
     
 ]
 
@@ -36,74 +51,14 @@ const desktopapps = [
         name: "Chrome",
         logo: "./assets/chrome.png",
         status: "off" 
-    },
-    {
-        name: "Chrome",
-        logo: "./assets/chrome.png",
-        status: "off" 
-    },    
-    {
-        name: "Chrome",
-        logo: "./assets/chrome.png",
-        status: "off" 
     }
-    ,    
-    {
-        name: "Chrome",
-        logo: "./assets/chrome.png",
-        status: "off" 
-    }
-    ,    
-    {
-        name: "Chrome",
-        logo: "./assets/chrome.png",
-        status: "off" 
-    }
-    ,
-    {
-        name: "Chrome",
-        logo: "./assets/chrome.png",
-        status: "off" 
-    },
-    {
-        name: "Chrome",
-        logo: "./assets/chrome.png",
-        status: "off" 
-    },    
-    {
-        name: "Chrome",
-        logo: "./assets/chrome.png",
-        status: "off" 
-    }
-    ,    
-    {
-        name: "Chrome",
-        logo: "./assets/chrome.png",
-        status: "off" 
-    }
-    ,    
-    {
-        name: "Chrome",
-        logo: "./assets/chrome.png",
-        status: "off" 
-    },    
-    {
-        name: "Chrome",
-        logo: "./assets/chrome.png",
-        status: "off" 
-    }
-    ,    
-    {
-        name: "Chrome",
-        logo: "./assets/chrome.png",
-        status: "off" 
-    }
-    ,    
-    {
-        name: "Chrome",
-        logo: "./assets/chrome.png",
-        status: "off" 
-    }
+    
 ]
 
-export {apps,allapps, desktopapps}
+function grab(dapps){
+    apps.push(dapps);
+    allapps.push(dapps);
+
+}
+
+export {apps, allapps, desktopapps, grab}
