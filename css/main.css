@@ -145,43 +145,48 @@ footer button:hover{
    width: 1.4rem;
 }
 
-#desktop{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    border: 2px solid black;
+#desktop {
+    border: transparent;
     width: auto;
-    height: 20rem;
+    height: 95%;
+    max-width: 100%;
     position: fixed;
     top: 0;
     left: 0;
 }
 
-#desktop_app{
+#desktop_app {
     padding: 0;
-    margin: 0;
-    position: relative;
+    margin: 10px 0 0 0;
+    display: flex; 
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100%;
 }
 
-#desktop button{
+#desktop button {
     background-color: transparent;
-    border: 1px transparent;
+    border: 1px solid transparent;
     width: 5rem;
     height: 3.5rem;
-    overflow: show;
     align-items: center;
     display: flex;
     flex-direction: column;
-    margin: 0 0 5px 0;
+    margin: 0;
 }
 
-#desktop button img{
+#desktop button img {
     height: 2rem;
     width: auto;
     margin: 2px 2px 1px 2px;
 }
 
-#desktop button p{
+#desktop button:hover{
+    background-color: rgba(255, 255, 255, 0.100);
+    border: 1px solid rgba(255, 255, 255, 0.300);
+}
+
+#desktop button p {
     margin: 0;
     color: white;
     text-shadow: 1px 1px 1.1px black, 0 0 2.5px black;
