@@ -1,10 +1,11 @@
-import { apps } from "./app.js";
+import { apps, desktopapps } from "./app.js";
 
 function main(){
     //makes date and time reset every second
     setInterval(time, 1000);
     
     pinApp(apps);
+    desktopApp(desktopapps);
 }
 
 function pinApp(apps){
@@ -19,6 +20,20 @@ function pinApp(apps){
   
     document.getElementById("pin_taskbar").innerHTML = pinned;
     
+}
+
+function desktopApp(apps){
+
+    let pinned = [];
+
+    for(let i = 0; i < apps.length; i++){
+        let data = "";
+            data += '<button type="button" id="app' + i + '"><img src="'+ apps[i].logo +'"><p>'+ apps[i].name +'</p></button>'; 
+        pinned.push(data);
+    }
+
+    document.getElementById("desktop_app").innerHTML = pinned;
+
 }
 
 function time(){
@@ -40,7 +55,10 @@ function time(){
 //inject desktop active apps to taskbar and hidden tabs
 function inject(){
 
+ 
 }
+
+
 
 function drag(){
 

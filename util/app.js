@@ -31,4 +31,34 @@ const allapps = [
     
 ]
 
-export {apps,allapps}
+const desktopapps = [
+    {
+        name: "Chrome",
+        logo: "./assets/chrome.png",
+        status: "off" 
+    },
+    {
+        name: "Chrome",
+        logo: "./assets/chrome.png",
+        status: "off" 
+    },    
+    {
+        name: "Chrome",
+        logo: "./assets/chrome.png",
+        status: "off" 
+    }
+    ,    
+    {
+        name: "Chrome",
+        logo: "./assets/chrome.png",
+        status: "off" 
+    }
+    ,    
+    {
+        name: "Chrome",
+        logo: "./assets/chrome.png",
+        status: "off" 
+    }
+]
+
+export {apps,allapps, desktopapps}
