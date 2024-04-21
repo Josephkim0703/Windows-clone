@@ -1,3 +1,4 @@
+
 const storage = [
     {
         name: "Chrome",
@@ -58,7 +59,8 @@ const desktopapps = [
 function grab(dapps){
     apps.push(dapps);
     allapps.push(dapps);
-
+ 
+console.log(apps);
 }
 
 export {apps, allapps, desktopapps, grab}
