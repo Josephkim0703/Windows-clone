@@ -1,6 +1,6 @@
-import { apps, desktopapps } from "./app.js";
+import { apps, desktopapps, allapps  } from "./app.js";
 import { grab } from "./app.js";
-
+import { hidden_icon } from "./popup.js";
 
 function main(){
     //makes date and time reset every second
@@ -49,38 +49,41 @@ function time(){
 
     let month = x.getMonth() + 1;
 
-    let time = (x.getHours() - 12) + ":" + x.getMinutes().toString().padStart(2, '0') + " " + y;
+    let time = (   hours) + ":" + x.getMinutes().toString().padStart(2, '0') + " " + y;
     let date = (month.toString().padStart(2, '0')) + "/" + x.getDate().toString().padStart(2, '0')+ "/" + x.getFullYear();
 
     document.getElementById("time").innerHTML = time + "<br>" + date;
 }
 
 //inject desktop active apps to taskbar and hidden tabs
-function inject( dapps, grab){
-    
-    let pinned = [];
 
-    for(let i = 0; i < dapps.length; i++){
-        let data = "";
-            data += '<button type="button" id="app' + i + '"><img src="'+ dapps[i].logo +'"><p>'+ dapps[i].name +'</p></button>'; 
-        pinned.push(data);
-    }
+function inject( dapps, grab){
 
     for(let i = 0; i < dapps.length; i++){
     let option = document.getElementById("app" + i);
 
-    option.addEventListener("click", function(){
-        pinApp(apps);
-    
-        //it grab this which is the current option then replaces the id app with nothing to isolate the number
-        let index = parseInt(this.id.replace("app", ""));
-        grab(dapps[index]);
-    });
+    let clickcount = 0;
+
+    function click(){
+
+        clickcount++;
+
+        if(clickcount === 2){
+            
+            clickcount = 0;
+
+            pinApp(apps);
+            hidden_icon(allapps);
+            //it grab this which is the current option then replaces the id app with nothing to isolate the number
+            let index = parseInt(this.id.replace("app", ""));
+            grab(dapps[index]);
+        }
+    }
+
+    option.addEventListener("click" , click)
  }
 
 }
-
-
 
 function drag(){
 

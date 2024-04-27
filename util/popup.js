@@ -1,11 +1,10 @@
 import { apps , allapps } from "./app.js";
-import { grab, desktopapps } from "./app.js";
+export {hidden_icon}
 
 function main() {
 popup_network();
 hidden_icon(allapps);
 closeTabs();
-inject( desktopapps, grab)
 }
 
 function popup_network() {
@@ -102,30 +101,6 @@ for(let i = 0; i < iconArr.length; i++){
        hiddenIcon.style.visibility = "visible";
     });
 }
-}
-
-function inject( dapps, grab){
-    
-    let pinned = [];
-
-    for(let i = 0; i < dapps.length; i++){
-        let data = "";
-            data += '<button type="button" id="app' + i + '"><img src="'+ dapps[i].logo +'"><p>'+ dapps[i].name +'</p></button>'; 
-        pinned.push(data);
-    }
-
-    for(let i = 0; i < dapps.length; i++){
-    let option = document.getElementById("app" + i);
-
-    option.addEventListener("click", function(){
-        hidden_icon(allapps)
-    
-        //it grab this which is the current option then replaces the id app with nothing to isolate the number
-        let index = parseInt(this.id.replace("app", ""));
-        grab(dapps[index]);
-    });
- }
-
 }
 
 function closeTabs() {
