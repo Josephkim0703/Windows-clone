@@ -49,7 +49,6 @@ document.getElementById("airplane_mode").onclick = function () {
         document.getElementById("network_icon").src = "./assets/network.png";
         document.getElementById("airplane_text").textContent = "Airplane mode";
     }
-
     airplane = !airplane;
 };
 
@@ -121,7 +120,7 @@ function closeTabs() {
 
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].onclick = function() {
-
+            document.getElementById("airplane_icon").style.transition = 0 + "s";
             if (!show) {
                 tabs[i].style.visibility = "visible";
                 show = true;

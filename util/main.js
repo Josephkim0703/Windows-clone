@@ -17,7 +17,7 @@ function pinApp(apps){
 
     for(let i = 0; i < apps.length; i++){
         let data = "";
-            data += '<button type="button" id="app' + i + '"><img src="'+ apps[i].logo +'"></button>'; 
+            data += '<button type="button" id="app' + i + '" class ="taskbarbutton"><img src="'+ apps[i].logo +'"></button>'; 
         pinned.push(data);
     }
   
@@ -68,15 +68,27 @@ function inject( dapps, grab){
 
         clickcount++;
 
+        if(clickcount === 1){
+            option.style.backgroundColor = "rgba(100, 100, 100, 0.150)";
+            option.style.border = "1px solid rgba(255, 255, 255, 0.300)";
+        }
+
         if(clickcount === 2){
-            
+
+            option.style.backgroundColor = "";
+            option.style.border = "";
+
             clickcount = 0;
 
+            //it grab this which is the current option then replaces the id app with nothing to isolate the number
+            let index = parseInt(this.id.replace("app", ""));   
+         
+            grab(dapps[index]); 
+
+          
             pinApp(apps);
             hidden_icon(allapps);
-            //it grab this which is the current option then replaces the id app with nothing to isolate the number
-            let index = parseInt(this.id.replace("app", ""));
-            grab(dapps[index]);
+            
         }
     }
 
