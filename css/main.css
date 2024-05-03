@@ -83,7 +83,9 @@ footer button img{
 }
 
 footer button:hover{
-    background: rgba(255, 255, 255, 0.13);;
+    background: rgba(255, 255, 255, 0.13);
+    transition: 0.2s;
+   
 }
 
 #left_buttons input:hover{
@@ -129,16 +131,20 @@ footer button:hover{
     display: flex;
     flex-direction: row;
     margin-left: -2.5rem;
+    
 }
 
 #pin_taskbar button{
     height: auto;
     transform: translateY(-1rem);
-}
+    margin: 0 0.8px 0 0.8px;
+    border-bottom: 3px solid transparent;
+}  
+
 
 #pin_taskbar img{
     width: 70%;
-    margin: 5.3px;
+    margin: 5.5px 4.2px 2.7px 4.2px;
 }
 
 #news img{
@@ -194,5 +200,10 @@ footer button:hover{
     font-weight: 500;
 }
 
+#bar{
+    width: 100%;
+    color: white;
+    height: 2px;
+}
 
 

@@ -7,8 +7,10 @@ function main(){
     setInterval(time, 1000);
     
     pinApp(apps);
+
     desktopApp(desktopapps);
-    inject(desktopapps, grab)
+
+    inject(desktopapps, grab);
 }
 
 function pinApp(apps){
@@ -31,7 +33,7 @@ function desktopApp(apps){
 
     for(let i = 0; i < apps.length; i++){
         let data = "";
-            data += '<button type="button" id="app' + i + '"><img src="'+ apps[i].logo +'"><p>'+ apps[i].name +'</p></button>'; 
+            data += '<button type="button" id="desktopApps' + i + '"><img src="'+ apps[i].logo +'"><p>'+ apps[i].name +'</p></button>'; 
         pinned.push(data);
     }
 
@@ -60,7 +62,7 @@ function time(){
 function inject( dapps, grab){
 
     for(let i = 0; i < dapps.length; i++){
-    let option = document.getElementById("app" + i);
+    let option = document.getElementById("desktopApps" + i);
 
     let clickcount = 0;
 
@@ -81,23 +83,44 @@ function inject( dapps, grab){
             clickcount = 0;
 
             //it grab this which is the current option then replaces the id app with nothing to isolate the number
-            let index = parseInt(this.id.replace("app", ""));   
-         
-            grab(dapps[index]); 
-
-          
-            pinApp(apps);
-            hidden_icon(allapps);
+            let index = parseInt(this.id.replace("desktopApps", ""));   
             
+            //turns status on
+            dapps[index].status = "on";
+            //current tab open
+            dapps[index].active = "yes";
+
+            grab(dapps[index]);
+            
+            //refreshes the taskbar and hidden tab
+            pinApp(apps);
+            hidden_icon(allapps); 
+            active(apps)  
         }
     }
-
     option.addEventListener("click" , click)
- }
-
+    }
 }
 
-function drag(){
+function active(apps){
+
+   for(let i = 0; i < apps.length; i++){
+
+        if(apps[i].status === "on"){
+            document.getElementById("app" + i).style.borderBottom = "3px solid rgba(255, 255, 255, 0.600)";
+        }else{
+            document.getElementById("app" + i).style.borderBottom = "";
+        }
+
+        if(apps[i].active === "yes"){
+            document.getElementById("app" + i).style.backgroundColor = "rgba(255, 255, 255, 0.250)";
+        }else{
+            document.getElementById("app" + i).style.backgroundColor = "";
+        }
+    }  
+}
+
+function drag(app){
 
     document.addEventListener("drag", evt => {
         

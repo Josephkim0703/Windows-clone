@@ -1,4 +1,5 @@
 import { apps , allapps } from "./app.js";
+
 export {hidden_icon}
 
 function main() {
@@ -130,6 +131,7 @@ function closeTabs() {
             }  
 
             document.getElementById("background").addEventListener("click", () =>{
+                document.getElementById("airplane_icon").style.transition = 0 + "s";
                 tabs[i].style.visibility = "hidden";
                 show = false;
             }); 
