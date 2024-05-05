@@ -137,7 +137,7 @@ footer button:hover{
 #pin_taskbar button{
     height: auto;
     transform: translateY(-1rem);
-    margin: 0 0.8px 0 0.8px;
+    margin: 0 1px 0 0;
     border-bottom: 3px solid transparent;
 }  
 
@@ -200,10 +200,39 @@ footer button:hover{
     font-weight: 500;
 }
 
-#bar{
-    width: 100%;
-    color: white;
-    height: 2px;
+.box{
+    width: 50%;
+    height: 65%;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
 }
 
+.box button{
+    width: 40px;
+    height: 35px;
+    margin: 0px 0px 0.5px 0px;
+    border: 1px solid transparent;
+    background-color: transparent;
+    color: rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+#app_close:hover{
+    transition: background-color, color 0.25s;
+    background-color: rgb(255, 60, 60);
+    color: white;
+}
+
+#app_size:hover, #app_hidden:hover{
+    transition: background-color, color 0.25s;
+    background-color: rgba(0, 0, 0, 0.15);
+    color: black;
+}
 
